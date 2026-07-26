@@ -32,6 +32,7 @@ COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 ROW_RE = re.compile(r"<tr\b[^>]*>(.*?)</tr>", re.I | re.S)
 CELL_RE = re.compile(r"<(t[dh])\b([^>]*)>(.*?)</t[dh]>", re.I | re.S)
 TABLE_RE = re.compile(r"<table\b([^>]*)>(.*?)</table>", re.I | re.S)
+ROYAL_BADGE_RE = re.compile(r"<span\b[^>]*class\s*=\s*(['\"])[^'\"]*badge-danger[^'\"]*\1[^>]*>.*?</span>", re.I | re.S)
 
 
 def download(url: str) -> str:
@@ -87,7 +88,9 @@ def parse_shadows(source: str) -> list[dict[str, object]]:
                 if len(values) < 6:
                     continue
                 raw_persona = cells[1][2]
+                persona_name = clean_text(ROYAL_BADGE_RE.sub("", raw_persona))
                 mapping = dict(zip(headers, values))
+                mapping["Persona"] = persona_name
                 level_value = mapping.get("Level", values[0])
                 level: int | str
                 try:
