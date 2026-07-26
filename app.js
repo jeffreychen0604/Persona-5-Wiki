@@ -1,7 +1,8 @@
-import { confidants } from './data/confidants.js?v=4';
-import { answers } from './data/answers.js?v=4';
-import { extraConfidants } from './data/extras.js?v=4';
-import { dialoguePrompts } from './data/dialogue-prompts.js?v=4';
+import { confidants } from './data/confidants.js?v=5';
+import { answers } from './data/answers.js?v=5';
+import { extraConfidants } from './data/extras.js?v=5';
+import { dialoguePrompts } from './data/dialogue-prompts.js?v=5';
+import { dialogueOverrides } from './data/dialogue-overrides.js?v=5';
 
 const RPG='https://www.rpgsite.net';
 const guideMeta=[
@@ -38,7 +39,7 @@ const state={view:'confidants',selected:guideMeta[0],month:'All',query:''};
 function escapeHtml(value=''){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function scoreOf(text){const m=String(text).match(/\+(\d+)/);return m?Number(m[1]):0;}
 function decorateAnswer(text){return escapeHtml(text).replace(/\+(\d+)/g,'<span class="points">+$1</span>');}
-function safeSave(){try{localStorage.setItem('p5r-view-v4',state.view);localStorage.setItem('p5r-selected-v4',state.selected.id);}catch{}}
+function safeSave(){try{localStorage.setItem('p5r-view-v5',state.view);localStorage.setItem('p5r-selected-v5',state.selected.id);}catch{}}
 function findConfidant(meta){return byName.get(meta.name.toLowerCase())||allConfidants.find(x=>String(x.id).toLowerCase()===meta.arcana.toLowerCase());}
 function canonicalRank(label=''){
   const value=String(label).toUpperCase().replace(/[–—]/g,'-');
@@ -69,10 +70,12 @@ function promptScore(group,candidate,groupIndex){
 }
 function resolvePrompts(name,rankLabel,groups){
   const key=canonicalRank(rankLabel);
+  const overrides=dialogueOverrides[name]?.[key]||[];
   const records=(dialoguePrompts[name]||[]).filter(record=>record.rank===key);
   const candidates=records.flatMap((record,recordIndex)=>(record.groups||[]).map((group,groupIndex)=>({...group,recordIndex,groupIndex})));
   const used=new Set();
   return groups.map((group,groupIndex)=>{
+    if(overrides[groupIndex])return overrides[groupIndex];
     let bestIndex=-1,bestScore=-Infinity;
     candidates.forEach((candidate,index)=>{
       if(used.has(index))return;
@@ -170,5 +173,5 @@ $$('.navButton').forEach(button=>button.onclick=()=>{state.query='';$('#searchIn
 $('#searchInput').addEventListener('input',event=>{state.query=event.target.value;applySearch();});
 $('#backTop').onclick=()=>scrollTo({top:0,behavior:'smooth'});
 addEventListener('scroll',()=>$('#backTop').classList.toggle('visible',scrollY>520),{passive:true});
-try{const id=localStorage.getItem('p5r-selected-v4');const saved=guideMeta.find(x=>x.id===id);if(saved)state.selected=saved;const view=localStorage.getItem('p5r-view-v4');if(view==='class')state.view='class';}catch{}
+try{const id=localStorage.getItem('p5r-selected-v5');const saved=guideMeta.find(x=>x.id===id);if(saved)state.selected=saved;const view=localStorage.getItem('p5r-view-v5');if(view==='class')state.view='class';}catch{}
 switchView(state.view);
