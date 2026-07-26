@@ -7,6 +7,7 @@ on:
       - 'scripts/sync_dialogue_prompts.py'
       - 'scripts/sync_negotiation_data.py'
       - 'scripts/sync_aqiu_p5r_data.py'
+      - 'scripts/patch_fusion_db_recipes.py'
       - 'scripts/validate_dialogue_matching.mjs'
       - 'data/dialogue-overrides.js'
       - 'data/quiz.js'
@@ -14,6 +15,7 @@ on:
       - 'quiz-tab.js'
       - 'negotiation-tabs.js'
       - 'fusion-db.js'
+      - 'navigation-state.js'
       - 'styles.css'
       - 'dialogue.css'
       - 'quiz.css'
@@ -76,17 +78,25 @@ jobs:
           grep -q 'export const aqiuP5rFusion' data/aqiu-p5r-fusion.js
           test -s data/aqiu-p5r-report.json
 
-      - name: Persist generated datasets before validation
+      - name: Apply Fusion DB recipe guards
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/patch_fusion_db_recipes.py
+          grep -q 'SPECIAL_PAIR_KEYS' fusion-db.js
+          grep -q 'selectableOptions' fusion-db.js
+
+      - name: Persist generated datasets and guarded controller
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A data
+          git add -A data fusion-db.js
           if git diff --cached --quiet; then
-            echo 'Generated datasets are already current.'
+            echo 'Generated datasets and Fusion DB controller are already current.'
           else
-            git commit -m 'Generate repository-local guide datasets'
+            git commit -m 'Generate complete repository-local Fusion DB'
             git push
           fi
 
@@ -96,8 +106,9 @@ jobs:
           set -euo pipefail
           node --experimental-default-type=module --check app.js
           node --experimental-default-type=module --check quiz-tab.js
-          test ! -f negotiation-tabs.js || node --experimental-default-type=module --check negotiation-tabs.js
-          test ! -f fusion-db.js || node --experimental-default-type=module --check fusion-db.js
+          node --experimental-default-type=module --check negotiation-tabs.js
+          node --experimental-default-type=module --check fusion-db.js
+          node --experimental-default-type=module --check navigation-state.js
           node --experimental-default-type=module --check data/dialogue-overrides.js
           node --experimental-default-type=module --check data/quiz.js
           node --experimental-default-type=module --check data/shadows-royal.js
@@ -108,7 +119,7 @@ jobs:
           node --experimental-default-type=module --check data/aqiu-p5r-fusion.js
           node --experimental-default-type=module -e "import('./data/quiz.js').then(({tvQuiz})=>{const questions=tvQuiz.filter(x=>!x.event);if(questions.length!==11)throw new Error('Expected 11 TV Quiz questions');if(questions.some(x=>!['A','B'].includes(x.correct)||x.options.length!==2))throw new Error('Invalid TV Quiz choice data');console.log('TV Quiz questions:',questions.length);})"
           node --experimental-default-type=module -e "Promise.all([import('./data/shadows-royal.js'),import('./data/negotiation-royal.js')]).then(([s,n])=>{if(s.royalShadows.length<180)throw new Error('Shadow dataset too small');if(n.royalNegotiations.length<250)throw new Error('Negotiation dataset too small');console.log('Royal Shadows:',s.royalShadows.length,'Negotiation questions:',n.royalNegotiations.length);})"
-          node --experimental-default-type=module -e "Promise.all([import('./data/aqiu-p5r-personas.js'),import('./data/aqiu-p5r-skills.js'),import('./data/aqiu-p5r-enemies.js'),import('./data/aqiu-p5r-fusion.js')]).then(([p,s,e,f])=>{if(p.aqiuP5rPersonas.length<220)throw new Error('AqiU Persona dataset too small');if(s.aqiuP5rSkills.length<220)throw new Error('AqiU skill dataset too small');if(e.aqiuP5rEnemies.length<120)throw new Error('AqiU enemy dataset too small');if(f.aqiuP5rFusion.arcana.length!==24)throw new Error('Unexpected P5R fusion chart');if(Object.keys(f.aqiuP5rFusion.specialRecipes).length<30)throw new Error('Special recipe dataset too small');console.log('AqiU P5R:',p.aqiuP5rPersonas.length,'personas,',s.aqiuP5rSkills.length,'skills,',e.aqiuP5rEnemies.length,'enemies');})"
+          node --experimental-default-type=module -e "Promise.all([import('./data/aqiu-p5r-personas.js'),import('./data/aqiu-p5r-skills.js'),import('./data/aqiu-p5r-enemies.js'),import('./data/aqiu-p5r-fusion.js')]).then(([p,s,e,f])=>{if(p.aqiuP5rPersonas.length<220)throw new Error('AqiU Persona dataset too small');if(s.aqiuP5rSkills.length<500)throw new Error('Merged AqiU skill dataset too small');if(e.aqiuP5rEnemies.length<120)throw new Error('AqiU enemy dataset too small');if(f.aqiuP5rFusion.arcana.length!==24)throw new Error('Unexpected P5R fusion chart');if(Object.keys(f.aqiuP5rFusion.specialRecipes).length<30)throw new Error('Special recipe dataset too small');console.log('AqiU P5R:',p.aqiuP5rPersonas.length,'personas,',s.aqiuP5rSkills.length,'skills,',e.aqiuP5rEnemies.length,'enemies');})"
 
       - name: Require complete prompt matching coverage
         shell: bash
