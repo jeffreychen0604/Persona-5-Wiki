@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#080808" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="P5R Guide" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>P5R Pocket Guide — iOS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">P5R</div>
+        <div><strong>P5R Pocket Guide</strong><span>iPhone quick reference</span></div>
+      </div>
+      <nav class="main-tabs" aria-label="Main guide sections">
+        <button class="main-tab active" data-view="confidants" aria-label="Confidant Guide"><span class="nav-icon">♟</span><span>Confidants</span></button>
+        <button class="main-tab" data-view="class" aria-label="Class Answer Guide"><span class="nav-icon">✎</span><span>Class Answers</span></button>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" id="expandAll" title="Expand all rank cards">Expand all</button>
+        <button class="icon-btn" id="collapseAll" title="Collapse all rank cards">Collapse</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Pocket reference for iOS</div>
+      <h1 id="heroTitle">Confidant Guide</h1>
+      <p id="heroDescription">Swipe between Confidants, jump to a Rank, and keep the answers within thumb reach.</p>
+    </div>
+    <div class="source-badge"><span class="dot" id="sourceDot"></span><span id="sourceStatus">Ready to load</span></div>
+  </section>
+
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Search character, Arcana, rank…" autocomplete="off" />
+          <span class="search-icon">⌕</span>
+        </div>
+      </div>
+      <div class="sidebar-list" id="sidebarList"></div>
+    </aside>
+
+    <section class="content-panel">
+      <div class="content-toolbar">
+        <div class="content-title"><strong id="contentTitle">Select a guide</strong><span id="contentSubtitle">—</span></div>
+        <button class="toolbar-btn" id="openSource">Open source ↗</button>
+        <button class="toolbar-btn" id="refreshSource">Refresh data</button>
+      </div>
+      <div class="rank-jumps" id="rankJumps"></div>
+      <div id="contentArea" class="article">
+        <div class="loading"><div><div class="spinner"></div>Preparing guide…</div></div>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>Primary editorial source: RPG Site. Persona 5 Royal and related names belong to ATLUS / SEGA.</span>
+      <span>This file reorganizes guide data for personal reference; it is not affiliated with RPG Site or ATLUS.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
