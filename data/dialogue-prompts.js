@@ -2960,6 +2960,896 @@ export const dialoguePrompts = {
       ]
     }
   ],
+  "Kasumi Yoshizawa": [
+    {
+      "rank": "1",
+      "sourceLabel": "1",
+      "groups": [
+        {
+          "prompt": "Slimy Middle-Aged Man: \"What do you want?\"",
+          "answers": [
+            "You're hurting her.",
+            "I go to Shujin too.",
+            "Could I ask you for directions?"
+          ]
+        },
+        {
+          "prompt": "\"Thank you so much! I'm sorry for the trouble!\"",
+          "answers": [
+            "Are you okay?",
+            "Was that guy hassling you?"
+          ]
+        },
+        {
+          "prompt": "\"So... what made you step in to help me?\"",
+          "answers": [
+            "Because I wanted to.",
+            "I couldn't look the other way."
+          ]
+        },
+        {
+          "prompt": "\"So... Where'd the other people in your group go?\"",
+          "answers": [
+            "We've disbanded.",
+            "They ditched me."
+          ]
+        },
+        {
+          "prompt": "\"If it's all right with you, why don't we eat our soup together?\"",
+          "answers": [
+            "Sure.",
+            "This is soup, though."
+          ]
+        },
+        {
+          "prompt": "\"So I truly appreciate what you did for me! Thank you so much.\"",
+          "answers": [
+            "Don't worry, it was nothing.",
+            "You're welcome."
+          ]
+        },
+        {
+          "prompt": "\"I'm also so sorry for what happened the other day!\"",
+          "answers": [
+            "The other day?",
+            "About what?"
+          ]
+        },
+        {
+          "prompt": "\"I heard some of my classmates gossiping about you, too.\"",
+          "answers": [
+            "Were you disappointed?",
+            "Were you surprised?",
+            "For real?"
+          ]
+        },
+        {
+          "prompt": "\"What were all the crimes I'd heard? Burglary, murder, and... elephant tusk trafficking, was it?\"",
+          "answers": [
+            "I've done none of that.",
+            "Well, that's a first for me.",
+            "I drive without a license, too."
+          ]
+        },
+        {
+          "prompt": "\"You know what, it just hit me—I haven't introduced myself yet!\"",
+          "answers": [
+            "I'm [first name] [surname].",
+            "I'm [surname], a second-year."
+          ]
+        },
+        {
+          "prompt": "\"Sorry, I didn't mean to run out on you like that.\"",
+          "answers": [
+            "So, you're Kasumi Yoshizawa?",
+            "You dropped this."
+          ]
+        },
+        {
+          "prompt": "\"Well, you've cracked the case—I'm Kasumi Yoshizawa, a first-year!\"",
+          "answers": [
+            "That was impressive.",
+            "Are you an athlete?"
+          ]
+        },
+        {
+          "prompt": "\"Wait... Is there a cat somewhere around here?\"",
+          "answers": [
+            "Can you teach me that stuff?",
+            "I want to learn your moves."
+          ]
+        },
+        {
+          "prompt": "\"So it would be wonderful if you could give me some advice whenever you have the time.\"",
+          "answers": [
+            "Sure you want my help?",
+            "You want my advice?"
+          ]
+        },
+        {
+          "prompt": "Morgana: \"This sounds like a pretty sweet deal to me—what do you think?\"",
+          "answers": [
+            "Hope I'm helpful to you.",
+            "We have a deal."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "2",
+      "sourceLabel": "2",
+      "groups": [
+        {
+          "prompt": "\"It's all about the harmony between the internal and external oblique muscles... I can't get enough of it!\"",
+          "answers": [
+            "We're just getting started.",
+            "Go easy on me.",
+            "I'm so done with this."
+          ]
+        },
+        {
+          "prompt": "\"I'm actually not doing so great at the moment, so I'm not sure I could manage anything too strenuous.\"",
+          "answers": [
+            "Next time, then.",
+            "You doing okay?",
+            "Lucky for me..."
+          ]
+        },
+        {
+          "prompt": "\"The idea's not to stop doing gymnastics, just... she wants me to take a break.\"",
+          "answers": [
+            "I see.",
+            "So now...?"
+          ]
+        },
+        {
+          "prompt": "\"Even if we're not doing gymnastics, will you still keep going out with me!?\"",
+          "answers": [
+            "No problem.",
+            "You sure?",
+            "Uh, romantically?"
+          ]
+        },
+        {
+          "prompt": "\"If I stick with you, Senpai, I think I can learn how to be confident again!\"",
+          "answers": [
+            "Leave it to me.",
+            "Let's give it a try.",
+            "Then follow my lead."
+          ]
+        },
+        {
+          "prompt": "\"I was so relieved, I suddenly got really hungry... and then my stomach wouldn't stop growling in my meeting.\"",
+          "answers": [
+            "Impressive.",
+            "Gotta push through it.",
+            "You did eat eventually, right?"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "3",
+      "sourceLabel": "3",
+      "groups": [
+        {
+          "prompt": "\"And I figured something out! It's this!\"",
+          "answers": [
+            "Making bento?",
+            "Potluck parties?",
+            "\"This\" being…?"
+          ]
+        },
+        {
+          "prompt": "\"I made this specifically with your body type in mind, and knowing how much you exercise... Do you want it?\"",
+          "answers": [
+            "I'm touched!",
+            "It looks delicious.",
+            "Let's see if it's good..."
+          ]
+        },
+        {
+          "prompt": "\"Let's dig in!\"",
+          "answers": [
+            "Is that all for you?",
+            "That seems a little much.",
+            "What IS that?"
+          ]
+        },
+        {
+          "prompt": "\"-senpai? You okay? Your eyes are glazing over...\"",
+          "answers": [
+            "This tastes like...",
+            "It's definitely unique.",
+            "It's... greeeaaat..."
+          ]
+        },
+        {
+          "prompt": "\"Or, wait—maybe you prefer the super spicy ones!\"",
+          "answers": [
+            "Not exactly.",
+            "Is there a third option...?"
+          ]
+        },
+        {
+          "prompt": "\"Should I get mayonnaise? Soy sauce...? Maybe miso? Do you think Dr. Maruki will have some salt!?\"",
+          "answers": [
+            "Calm down.",
+            "You're going to get it now?"
+          ]
+        },
+        {
+          "prompt": "\"Oh, you're right! I should just buy something new you can eat right now!\"",
+          "answers": [
+            "This works fine as is.",
+            "I'm enjoying this.",
+            "Let's just eat."
+          ]
+        },
+        {
+          "prompt": "\"I'm so embarrassed... I thought it was so great when I presented it to you, and now...\"",
+          "answers": [
+            "You could try again sometime?",
+            "It happens.",
+            "Just keep at it."
+          ]
+        },
+        {
+          "prompt": "\"...Maybe this kind of confidence can help me figure out who I really am.\"",
+          "answers": [
+            "That sounds right.",
+            "Maybe..."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "4",
+      "sourceLabel": "4",
+      "groups": [
+        {
+          "prompt": "\"I've been wanting to come here for a while, but I never had the chance to drop by.\"",
+          "answers": [
+            "You have bad eyesight?",
+            "You're looking to buy?",
+            "I have enough glasses."
+          ]
+        },
+        {
+          "prompt": "\"What do you think?\"",
+          "answers": [
+            "A pretty modern look.",
+            "Not my style.",
+            "I look so aloof in these."
+          ]
+        },
+        {
+          "prompt": "\"This could be a good one... Hmm...\"",
+          "answers": [
+            "Do they suit your dad, though?",
+            "I'm not so sure..."
+          ]
+        },
+        {
+          "prompt": "\"But your input's been really helpful so far! Would you mind poking around with me for a bit longer?\"",
+          "answers": [
+            "Of course.",
+            "Let's keep going.",
+            "Sure, whatever."
+          ]
+        },
+        {
+          "prompt": "\"A lot of them are good, but none of them have really clinched it for me yet...\"",
+          "answers": [
+            "Trust your instincts.",
+            "Don't overthink it."
+          ]
+        },
+        {
+          "prompt": "\"I don't know how to describe it. It just seems perfect for my dad somehow.\"",
+          "answers": [
+            "Good choice.",
+            "I'm sure he'll love it."
+          ]
+        },
+        {
+          "prompt": "\"I ended up with a great present. All thanks to you, Joker-senpai!\"",
+          "answers": [
+            "It's part of our deal.",
+            "Not a problem at all.",
+            "I expect compensation."
+          ]
+        },
+        {
+          "prompt": "\"The more I thought about it, the more... empty I felt. Like I wasn't even me anymore.\"",
+          "answers": [
+            "Everyone deals with that.",
+            "That's your slump talking."
+          ]
+        },
+        {
+          "prompt": "\"And having your support makes me even more determined to make that happen.\"",
+          "answers": [
+            "Good luck.",
+            "We'll work at it together.",
+            "No rush, though."
+          ]
+        },
+        {
+          "prompt": "\"And it suits him even better than I imagined! He was so happy with them!\"",
+          "answers": [
+            "I'm glad to hear that.",
+            "You should be more confident.",
+            "Of course he is."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "5",
+      "sourceLabel": "5",
+      "groups": [
+        {
+          "prompt": "\"Probably didn't expect to be meeting me at the batting center, huh?\"",
+          "answers": [
+            "It's a surprise, yeah.",
+            "Not at all.",
+            "What are you scheming?"
+          ]
+        },
+        {
+          "prompt": "\"Honestly, I wanted you to see me hit a home run.\"",
+          "answers": [
+            "This seems kind of sudden.",
+            "If I'm just watching..."
+          ]
+        },
+        {
+          "prompt": "\"What do you think? That could work, right?\"",
+          "answers": [
+            "It is a good idea.",
+            "Go ahead. I'll watch.",
+            "Maybe stick to gymnastics."
+          ]
+        },
+        {
+          "prompt": "\"I never see the ball coming, and I keep flinching... I didn't think my slump was hitting me this hard...\"",
+          "answers": [
+            "Don't give up yet.",
+            "Just don't lose hope.",
+            "You can beat this, right?"
+          ]
+        },
+        {
+          "prompt": "\"I did it, Senpai! I hit the ball!\"",
+          "answers": [
+            "Congratulations.",
+            "I saw!",
+            "How's that feel?"
+          ]
+        },
+        {
+          "prompt": "\"I'd forgotten how it felt to work that hard on someone else's behalf...\"",
+          "answers": [
+            "That's important.",
+            "Don't forget how that feels."
+          ]
+        },
+        {
+          "prompt": "\"I'm not totally back to normal yet, but even my grades have been going back up.\"",
+          "answers": [
+            "Nicely done.",
+            "It's not over yet."
+          ]
+        },
+        {
+          "prompt": "\"It's nice to dip into sports aside from gymnastics. Was there anything else you wanted to try, Senpai?\"",
+          "answers": [
+            "Swimming.",
+            "Running.",
+            "Gymnastics."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "5.5",
+      "sourceLabel": "5.5",
+      "groups": [
+        {
+          "prompt": "\"You're not serious, right? Please... I'm begging you, Joker-senpai... Please let me live as Kasumi!\"",
+          "answers": [
+            "Don't hide from the truth.",
+            "......"
+          ]
+        },
+        {
+          "prompt": "\"If you do, then I'll...!\"",
+          "answers": [
+            "Are you serious?",
+            "Don't do this..."
+          ]
+        },
+        {
+          "prompt": "\"...Why?\"",
+          "answers": [
+            "You need to stop.",
+            "Our fight's over."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "6",
+      "sourceLabel": "6",
+      "groups": [
+        {
+          "prompt": "\"I was just living my life—like I didn't even care that she was gone! I can't take this shame...\"",
+          "answers": [
+            "It wasn't on purpose.",
+            "What could you have done?",
+            "At least you realize it now."
+          ]
+        },
+        {
+          "prompt": "\"I was too self-absorbed to do anything!\"",
+          "answers": [
+            "Don't beat yourself up.",
+            "What'll you do now?",
+            "Calm down."
+          ]
+        },
+        {
+          "prompt": "\"We did our best trying to learn the moves and routines, since it kept getting us ice cream.\"",
+          "answers": [
+            "You two were close, then.",
+            "Those must be good memories.",
+            "All for ice cream, huh?"
+          ]
+        },
+        {
+          "prompt": "\"So obviously, I told her, 'Kasumi, you're a super genius!'\"",
+          "answers": [
+            "...That IS genius.",
+            "How old was she again?"
+          ]
+        },
+        {
+          "prompt": "\"She had her own practices to do, but she was always so busy helping me... She spent hours trying to help me.\"",
+          "answers": [
+            "She cared about you.",
+            "Sounds like tough training.",
+            "For the ice cream, right?"
+          ]
+        },
+        {
+          "prompt": "\"...infuriating.\"",
+          "answers": [
+            "Why?",
+            "I can imagine."
+          ]
+        },
+        {
+          "prompt": "\"At least then people would stop trying to compare us!\"",
+          "answers": [
+            "It must have been hard.",
+            "What about Kasumi's feelings?",
+            "Sounds like running away."
+          ]
+        },
+        {
+          "prompt": "\"Why did she have to protect an idiot like me...? I... I watched her—\"",
+          "answers": [
+            "You have to accept it.",
+            "Try not to think about it.",
+            "So what happens now?"
+          ]
+        },
+        {
+          "prompt": "\"I want you to hold me to this. To make sure I don't run away from who I am again.\"",
+          "answers": [
+            "I will.",
+            "I can manage that.",
+            "If it's part of the deal."
+          ]
+        },
+        {
+          "prompt": "\"...But this is the real me, I guess.\"",
+          "answers": [
+            "Do you want to run away?",
+            "You have to face it.",
+            "So what if it is?"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "7",
+      "sourceLabel": "7",
+      "groups": [
+        {
+          "prompt": "\"Kasumi was probably so disappointed in me... I got tired out so quick...\"",
+          "answers": [
+            "Maybe.",
+            "Who knows?",
+            "Were you frustrated?"
+          ]
+        },
+        {
+          "prompt": "\"Oh... I think it's almost time for my coach to show up. I'm kind of nervous.\"",
+          "answers": [
+            "Is she scary?",
+            "Is she strict?"
+          ]
+        },
+        {
+          "prompt": "\"*Siiigh...*\"",
+          "answers": [
+            "You okay?",
+            "That was a big sigh.",
+            "She's a real taskmaster."
+          ]
+        },
+        {
+          "prompt": "\"I'll always be someone less than Kasumi. I'm just worthless after all…\"",
+          "answers": [
+            "That isn't true.",
+            "You need more confidence.",
+            "That's just a mental block."
+          ]
+        },
+        {
+          "prompt": "\"It sounds like even Kasumi liked my more subtle and delicate moves, so... If I mix it with her aggressive style...\"",
+          "answers": [
+            "It'll be like a duet.",
+            "You'll become stronger."
+          ]
+        },
+        {
+          "prompt": "\"Senpai, will you go out with me again?\"",
+          "answers": [
+            "Of course.",
+            "I could watch you forever.",
+            "Another love confession?"
+          ]
+        },
+        {
+          "prompt": "\"It didn't seem like you were struggling at all, though. You might be just as tough as Kasumi... Amazing.\"",
+          "answers": [
+            "I was internally screaming.",
+            "Yeah, that was a breeze.",
+            "I love a good challenge."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "8",
+      "sourceLabel": "8",
+      "groups": [
+        {
+          "prompt": "\"I see. Well, I guess it's important to have a balanced diet...?\"",
+          "answers": [
+            "Requires Rank 5 Guts",
+            "Watch her from a distance",
+            "Slowly walk away"
+          ]
+        },
+        {
+          "prompt": "\"This is sort of like showing off my own style, right!?\"",
+          "answers": [
+            "Look at yourself.",
+            "You're just standing out."
+          ]
+        },
+        {
+          "prompt": "\"I don't even know if I'm worth showing off, let alone how to do it...\"",
+          "answers": [
+            "Try to stay positive.",
+            "I'm here for you.",
+            "It'll work out."
+          ]
+        },
+        {
+          "prompt": "\"Senpai... Senpai... Hmm...\"",
+          "answers": [
+            "What is it?",
+            "......"
+          ]
+        },
+        {
+          "prompt": "\"Oh, uh... um... Please don't stare at me like that.\"",
+          "answers": [
+            "You started it.",
+            "What, I can't look at you?"
+          ]
+        },
+        {
+          "prompt": "\"Um, what do you think?\"",
+          "answers": [
+            "It looks great.",
+            "You look really cute.",
+            "I'm in love."
+          ]
+        },
+        {
+          "prompt": "\"I'm so glad I found something good.\"",
+          "answers": [
+            "Did I help?",
+            "You found your answer?"
+          ]
+        },
+        {
+          "prompt": "\"And then, suddenly, I just... realized I wasn't nervous anymore.\"",
+          "answers": [
+            "I see...",
+            "So that's how it was."
+          ]
+        },
+        {
+          "prompt": "\"Even if you didn't like it... I don't think that'd change how I feel about it.\"",
+          "answers": [
+            "That's how it should be.",
+            "Sounds like progress."
+          ]
+        },
+        {
+          "prompt": "\"B-By the way, where do you like to get your clothes from, Senpai?\"",
+          "answers": [
+            "The airsoft shop.",
+            "The resale shop.",
+            "Online."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "9",
+      "sourceLabel": "9",
+      "groups": [
+        {
+          "prompt": "\"If possible, I'd like to go somewhere we can have a quiet discussion.\"",
+          "answers": [
+            "Wanna come over?",
+            "We have a café."
+          ]
+        },
+        {
+          "prompt": "\"Sorry for dropping in on you like this. I hope it's not too much trouble.\"",
+          "answers": [
+            "It's no problem.",
+            "We'll call it holiday hours."
+          ]
+        },
+        {
+          "prompt": "\"And if you wouldn’t mind, I’d like you to be there when I do... Is that okay?\"",
+          "answers": [
+            "Definitely.",
+            "Of course."
+          ]
+        },
+        {
+          "prompt": "\"I talked about wanting you to see me, and how that helped me stop worrying?\"",
+          "answers": [
+            "Of course I do.",
+            "Vaguely...",
+            "What about it?"
+          ]
+        },
+        {
+          "prompt": "\"Even as worthless as I am, I hope I still helped Kasumi somehow...\"",
+          "answers": [
+            "I know you did.",
+            "You're not worthless.",
+            "This is a new beginning."
+          ]
+        },
+        {
+          "prompt": "\"Th-There's something I need to tell you, Senpai!\"",
+          "answers": [
+            "What's going on?",
+            "There's something else?",
+            "Go ahead."
+          ]
+        },
+        {
+          "prompt": "\"I'm in lo... l-l-lo... I'm in... lo...\"",
+          "answers": [
+            "What?",
+            "In luh?"
+          ]
+        },
+        {
+          "prompt": "\"Um, but... The last thing I want to do is make you uncomfortable, so...\"",
+          "answers": [
+            "Let's stay friends, okay?*",
+            "I love you too.**"
+          ]
+        },
+        {
+          "prompt": "** \"Oh... what am I saying...?\"",
+          "answers": [
+            "Calm down.",
+            "Take your time."
+          ]
+        },
+        {
+          "prompt": "** \"I-I—um—you—\"",
+          "answers": [
+            "So? Any different?",
+            "You are so red right now.",
+            "You're so cute."
+          ]
+        },
+        {
+          "prompt": "** \"It feels as if I'm constantly riding a rollercoaster... I don't know what to do!\"",
+          "answers": [
+            "Get used to it.",
+            "Should I hang up...?",
+            "That's just how it is."
+          ]
+        },
+        {
+          "prompt": "* \"Just watch me and I promise I'll keep improving!\"",
+          "answers": [
+            "Show me your best.",
+            "I can't wait to see it.",
+            "You can always rely on me."
+          ]
+        },
+        {
+          "prompt": "* \"I really feel like I've matured. And I'm really glad for your part in that, Senpai.\"",
+          "answers": [
+            "I'm glad to hear that.",
+            "I didn't do much.",
+            "I'll always have your back."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "MAX",
+      "sourceLabel": "10 (Friendship)",
+      "groups": [
+        {
+          "prompt": "\"But today... Today I'm excited about this.\"",
+          "answers": [
+            "You look radiant today.",
+            "Now I'm getting nervous."
+          ]
+        },
+        {
+          "prompt": "Coach Hiraguchi: \"Could this be your doing?\"",
+          "answers": [
+            "It's all Sumire.",
+            "Just watch."
+          ]
+        },
+        {
+          "prompt": "\"Coach Hiraguchi... liked my routine.\"",
+          "answers": [
+            "You must be happy.",
+            "I'm so relieved.",
+            "It's only natural, Sumire."
+          ]
+        },
+        {
+          "prompt": "\"I genuinely can't thank you enough.\"",
+          "answers": [
+            "You did all the work.",
+            "We're not done yet.",
+            "It's been my pleasure."
+          ]
+        },
+        {
+          "prompt": "\"It'll be you and me... and Kasumi. All three of us taking on the world as a team!\"",
+          "answers": [
+            "Bring it on.",
+            "Give me a break.",
+            "I'll get my passport."
+          ]
+        },
+        {
+          "prompt": "\"That's why I want to turn this world back to how it used to be. I want to keep my promise with her.\"",
+          "answers": [
+            "I'm counting on you.",
+            "Don't get ahead of yourself.",
+            "We're our world's champions."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "MAX",
+      "sourceLabel": "10 (Romance)",
+      "groups": [
+        {
+          "prompt": "\"But today... Today I'm excited about this.\"",
+          "answers": [
+            "You look radiant today.",
+            "Now I'm getting nervous."
+          ]
+        },
+        {
+          "prompt": "Coach Hiraguchi: \"Could this be your doing?\"",
+          "answers": [
+            "It's all Sumire.",
+            "Just watch."
+          ]
+        },
+        {
+          "prompt": "Coach Hiraguchi: \"My, it seems you haven't quite made a total transformation.\"",
+          "answers": [
+            "Calm down.",
+            "Don't rush it."
+          ]
+        },
+        {
+          "prompt": "\"Coach Hiraguchi... liked my routine.\"",
+          "answers": [
+            "You must be happy.",
+            "I'm so relieved.",
+            "It's only natural, Sumire."
+          ]
+        },
+        {
+          "prompt": "\"...as well as discovering what's most important to me while performing.\"",
+          "answers": [
+            "And that is...?",
+            "What do you mean?",
+            "Is it someone you love?"
+          ]
+        },
+        {
+          "prompt": "\"I think it's finally hitting me... I managed to really give it my best...\"",
+          "answers": [
+            "And there's more to come.",
+            "You were amazing out there."
+          ]
+        },
+        {
+          "prompt": "\"Oh no, I thought this would stop my shaking, but now it feels like my heart's about to burst...\"",
+          "answers": [
+            "I'll stop if you want.",
+            "I feel the same way.",
+            "I don't want to let you go."
+          ]
+        },
+        {
+          "prompt": "\"That's why I want to turn this world back to how it used to be. I want to keep my promise with her.\"",
+          "answers": [
+            "I'm counting on you.",
+            "Don't get ahead of yourself.",
+            "We're our world's champions."
+          ]
+        },
+        {
+          "prompt": "\"Sorry for dragging you out on one of these. I was just so curious about what it'd be like!\"",
+          "answers": [
+            "I don't mind.",
+            "It's a nice view.",
+            "As long as you're happy."
+          ]
+        },
+        {
+          "prompt": "\"You're really great at rowing, you know. We were moving so smoothly... I was so surprised.\"",
+          "answers": [
+            "This is easy.",
+            "I did my best.",
+            "Yeah, tell me how great I am."
+          ]
+        },
+        {
+          "prompt": "\"What an incredible view! Can you imagine being this tall?\"",
+          "answers": [
+            "You don't mind heights?",
+            "It is quite a view.",
+            "B-But if we fell..."
+          ]
+        }
+      ]
+    }
+  ],
   "Goro Akechi": [
     {
       "rank": "1",
@@ -3453,6 +4343,1026 @@ export const dialoguePrompts = {
             "What of it?",
             "It's nothing bad.",
             "How about these fish, huh?"
+          ]
+        }
+      ]
+    }
+  ],
+  "Sadayo Kawakami": [
+    {
+      "rank": "1",
+      "sourceLabel": "1",
+      "groups": [
+        {
+          "prompt": "\"That being said... you called a maid service and requested me?\"",
+          "answers": [
+            "I was really lonely.",
+            "I don't have any friends."
+          ]
+        },
+        {
+          "prompt": "\"Sound good?\"",
+          "answers": [
+            "Thanks.",
+            "I promise."
+          ]
+        },
+        {
+          "prompt": "\"Oh, please request me if you need any help with your housework, OK?\"",
+          "answers": [
+            "I don't need any help.",
+            "Why?"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "2",
+      "sourceLabel": "2",
+      "groups": [
+        {
+          "prompt": "\"But then, doesn't it pain your heart to see such a cute maid all dirty?\"",
+          "answers": [
+            "It does.",
+            "I feel nothing.",
+            "I'll tell your boss."
+          ]
+        },
+        {
+          "prompt": "\"You weren't expecting to do anything weird with me, were you?\"",
+          "answers": [
+            "I can't say I wasn't...",
+            "Absolutely not!",
+            "What kind of weird things?"
+          ]
+        },
+        {
+          "prompt": "\"I assume you make a lot, since you can afford a maid service... Well, let me know if you do.\"",
+          "answers": [
+            "You need money?",
+            "What's it for?"
+          ]
+        },
+        {
+          "prompt": "\"You shouldn't be wasting it on services like this...\"",
+          "answers": [
+            "Are you scolding me?",
+            "This is all for you.",
+            "I requested you."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "3",
+      "sourceLabel": "3",
+      "groups": [
+        {
+          "prompt": "\"The high-end cup noodles really do make a difference, don't they?\"",
+          "answers": [
+            "Yeah, they do.",
+            "Do some real cooking.",
+            "Can I have a different maid?"
+          ]
+        },
+        {
+          "prompt": "\"...Besides, I thought I warned you already. Why would you request me again...?\"",
+          "answers": [
+            "I was curious.",
+            "So I could slack off in class.",
+            "I wanted to see you."
+          ]
+        },
+        {
+          "prompt": "\"I heard they might even cut the teachers' salaries... I'm so sick of it...\"",
+          "answers": [
+            "Your sister's bills, right?",
+            "I'll request you more often.",
+            "You're really blunt."
+          ]
+        },
+        {
+          "prompt": "\"Oh, did you hear that? Haha... Yeah, I'm a little behind on my sister's medical bills.\"",
+          "answers": [
+            "You have it rough.",
+            "Are they that expensive?",
+            "Don't overdo it."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "4",
+      "sourceLabel": "4",
+      "groups": [
+        {
+          "prompt": "\"I want to provide more services for you...\"",
+          "answers": [
+            "That would be great.",
+            "What are you scheming?"
+          ]
+        },
+        {
+          "prompt": "\"But he said that he prioritizes 'younger' women!\"",
+          "answers": [
+            "How rude.",
+            "No surprise there.",
+            "How old ARE you?"
+          ]
+        },
+        {
+          "prompt": "\"I look pretty good as a maid, don't I?\"",
+          "answers": [
+            "Yes, you do.",
+            "You're pushing it.",
+            "You need to love yourself."
+          ]
+        },
+        {
+          "prompt": "\"I don't have a sick sister. All that stuff about the fees and charges was all a lie too.\"",
+          "answers": [
+            "I already knew that.",
+            "Why did you lie to me?",
+            "You're a bad teacher."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "5",
+      "sourceLabel": "5",
+      "groups": [
+        {
+          "prompt": "\"You know you're being used for money... and you still request me?\"",
+          "answers": [
+            "It's fun.",
+            "I want to know more.",
+            "Who's the Master here?"
+          ]
+        },
+        {
+          "prompt": "\"He threatened me... saying that I'd be dismissed if I continued to tutor Takase-kun.\"",
+          "answers": [
+            "How terrible...",
+            "It was inevitable.",
+            "So, did you stop?"
+          ]
+        },
+        {
+          "prompt": "\"If only I had kept my promise to him...\"",
+          "answers": [
+            "It's not your fault.",
+            "It was bad luck.",
+            "It's no one's fault."
+          ]
+        },
+        {
+          "prompt": "\"So I ended up paying them the 'apology' money so they wouldn't sue me or say anything.\"",
+          "answers": [
+            "You OK with that?",
+            "Guardians, huh..."
+          ]
+        },
+        {
+          "prompt": "\"I've been coming here because of a random twist of fate, but we should say goodbye as well.\"",
+          "answers": [
+            "It's too late now.",
+            "What about our deal?",
+            "I want to see you again."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "6",
+      "sourceLabel": "6",
+      "groups": [
+        {
+          "prompt": "\"Sorry... I need to take a break...\"",
+          "answers": [
+            "You just got here.",
+            "Want to rest a bit?",
+            "Give me back my money."
+          ]
+        },
+        {
+          "prompt": "\"I can't stop coughing...\"",
+          "answers": [
+            "Are you all right?",
+            "Have you seen a doctor?",
+            "You should go home."
+          ]
+        },
+        {
+          "prompt": "\"I had my boss give me more shifts. I had to beg him for them, but...\"",
+          "answers": [
+            "Are you OK?",
+            "Don't overdo it."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "7",
+      "sourceLabel": "7",
+      "groups": [
+        {
+          "prompt": "\"I should be able to send it out tomorrow...\"",
+          "answers": [
+            "Don't strain yourself.",
+            "Don't lie.",
+            "Don't pay them."
+          ]
+        },
+        {
+          "prompt": "\"I guess transferring to our sister company is the only way...\"",
+          "answers": [
+            "Sister company?",
+            "Can you make a lot there?",
+            "Romance route flag."
+          ]
+        },
+        {
+          "prompt": "\"So if his guardians demand money, then I just have to pay them...\"",
+          "answers": [
+            "That's the wrong choice.",
+            "Isn't there another way?",
+            "Just rest for now."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "8",
+      "sourceLabel": "8",
+      "groups": [
+        {
+          "prompt": "\"...So this is just what I have to do.\"",
+          "answers": [
+            "That's the wrong decision.",
+            "Please reconsider.",
+            "Is this really what you want?"
+          ]
+        },
+        {
+          "prompt": "\"That's why I'm going to quit both my teaching job and my maid job... What do you think?\"",
+          "answers": [
+            "You're running away.",
+            "If that's what you decided.",
+            "I need my teacher."
+          ]
+        },
+        {
+          "prompt": "\"And yet, I still felt the need to teach... I wonder why I feel that way even now.\"",
+          "answers": [
+            "Try to remember.",
+            "That's your answer.",
+            "Take a look at yourself."
+          ]
+        },
+        {
+          "prompt": "\"I can't make things right with Takase-kun like this...\"",
+          "answers": [
+            "Are you going to give up?",
+            "Mistakes can be fixed."
+          ]
+        },
+        {
+          "prompt": "\"And that is my answer! ...Well, what do you think?\"",
+          "answers": [
+            "Be confident in your answer.",
+            "That's the right choice.",
+            "You're asking a student?"
+          ]
+        },
+        {
+          "prompt": "\"But from now on, I'm going to protect you too. As your teacher, I will never betray you.\"",
+          "answers": [
+            "I want to protect you.",
+            "That's reassuring."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "9",
+      "sourceLabel": "9",
+      "groups": [
+        {
+          "prompt": "\"I bet I'll be an old woman by the time I achieve my dreams.\"",
+          "answers": [
+            "Nonsense.",
+            "You may be right.",
+            "Aren't you old already...?"
+          ]
+        },
+        {
+          "prompt": "\"Today marks the day I graduate from being your maid.\"",
+          "answers": [
+            "What a bummer.",
+            "Thank you for your service."
+          ]
+        },
+        {
+          "prompt": "\"Besides, won't you be lonely? Hm?\"",
+          "answers": [
+            "Not really.",
+            "Romance route flag.*"
+          ]
+        },
+        {
+          "prompt": "* \"Giving someone the wrong idea... It's a sinful act, you know?\"",
+          "answers": [
+            "Got it.",
+            "Romance route flag.*"
+          ]
+        },
+        {
+          "prompt": "* \"This situation isn't normal. I'm a teacher, and you're my student, you know?\"",
+          "answers": [
+            "I'm a master; you're a maid.",
+            "Romance route flag."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "MAX",
+      "sourceLabel": "10 (Friendship)",
+      "groups": [
+        {
+          "prompt": "\"I need to work hard so I can make up for all the times I let my students down in the past.\"",
+          "answers": [
+            "I'm glad to hear that.",
+            "Sounds like you're busy."
+          ]
+        },
+        {
+          "prompt": "\"I put up with the mess because you were my client, but you need to thoroughly clean in here!\"",
+          "answers": [
+            "I will.",
+            "You're not my mom...",
+            "Same goes for you."
+          ]
+        },
+        {
+          "prompt": "\"You're a member of the Phantom Thieves, right?\"",
+          "answers": [
+            "What are you talking about?",
+            "Why do you think that?",
+            "I'm just a high schooler."
+          ]
+        },
+        {
+          "prompt": "\"And you're the only one who knew about my situation.\"",
+          "answers": [
+            "You got me.",
+            "You have no proof.",
+            "...So what if I am?"
+          ]
+        },
+        {
+          "prompt": "\"A new path where I'll never abandon any of my students...\"",
+          "answers": [
+            "That sounds promising.",
+            "I'll make sure of it."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "MAX",
+      "sourceLabel": "10 (Romance)",
+      "groups": [
+        {
+          "prompt": "\"...I'm sorry.\"",
+          "answers": [
+            "...Really?",
+            "I see.",
+            "That's too bad..."
+          ]
+        },
+        {
+          "prompt": "\"...I'm a teacher... And you're my student...\"",
+          "answers": [
+            "It doesn't matter.",
+            "That's the best part."
+          ]
+        },
+        {
+          "prompt": "\"I'm restraining myself because you're so special to me...\"",
+          "answers": [
+            "We won't get caught.",
+            "Don't worry about it.",
+            "You're so responsible."
+          ]
+        },
+        {
+          "prompt": "\"Or is that the sort of thing a member of the Phantom Thieves is into?\"",
+          "answers": [
+            "What are you talking about?",
+            "When did you realize?"
+          ]
+        },
+        {
+          "prompt": "\"And you're the only one who knew about my situation.\"",
+          "answers": [
+            "You got me.",
+            "You have no proof.",
+            "...So what if I am?"
+          ]
+        },
+        {
+          "prompt": "\"A new path where I'll never abandon any of my students...\"",
+          "answers": [
+            "That sounds promising.",
+            "I'll make sure of it."
+          ]
+        },
+        {
+          "prompt": "\"I'll obey them, you know... even though I'm no longer a maid.\"",
+          "answers": [
+            "I want to rely on you.",
+            "I want you to rely on me.",
+            "-|"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "1",
+      "sourceLabel": "1",
+      "groups": [
+        {
+          "prompt": "\"That being said... you called a maid service and requested me?\"",
+          "answers": [
+            "I was really lonely.",
+            "I don't have any friends."
+          ]
+        },
+        {
+          "prompt": "\"Sound good?\"",
+          "answers": [
+            "Thanks.",
+            "I promise."
+          ]
+        },
+        {
+          "prompt": "\"Oh, please request me if you need any help with your housework, okay?\"",
+          "answers": [
+            "I don't need any help.",
+            "Why?"
+          ]
+        },
+        {
+          "prompt": "\"It'll be our wittle secret, just for Becky and Master, okay? Can you keep a secret?\"",
+          "answers": [
+            "Yeah, I get it.",
+            "I will if you will.",
+            "Please stop talking like that."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "2",
+      "sourceLabel": "2",
+      "groups": [
+        {
+          "prompt": "\"But then, doesn't it pain your heart to see such a cute maid all dirty?\"",
+          "answers": [
+            "It does.",
+            "I feel nothing.",
+            "I'll tell your boss."
+          ]
+        },
+        {
+          "prompt": "\"You weren't expecting to do anything weird with me, were you?\"",
+          "answers": [
+            "I can't say I wasn't...",
+            "Absolutely not!",
+            "What kind of weird things?"
+          ]
+        },
+        {
+          "prompt": "\"I assume you make a lot, since you can afford a maid service... Well, let me know if you do.\"",
+          "answers": [
+            "You need money?",
+            "What's it for?"
+          ]
+        },
+        {
+          "prompt": "\"You shouldn't be wasting it on services like this...\"",
+          "answers": [
+            "Are you scolding me?",
+            "This is all for you.",
+            "I requested you."
+          ]
+        },
+        {
+          "prompt": "\"I really wanna do a lot more cleaning for you... Is that okay, Master?\"",
+          "answers": [
+            "You have the wrong number.",
+            "Uh, what the hell?",
+            "Is this the hard sell?"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "3",
+      "sourceLabel": "3",
+      "groups": [
+        {
+          "prompt": "\"The high-end cup noodles really do make a difference, don't they?\"",
+          "answers": [
+            "Yeah, they do.",
+            "Do some real cooking.",
+            "Can I have a different maid?"
+          ]
+        },
+        {
+          "prompt": "\"...Besides, I thought I warned you already. Why would you request me again...?\"",
+          "answers": [
+            "I was curious.",
+            "So I could slack off in class.",
+            "I wanted to see you."
+          ]
+        },
+        {
+          "prompt": "\"I heard they might even cut the teachers' salaries... I'm so sick of it...\"",
+          "answers": [
+            "Your sister's bills, right?",
+            "I'll request you more often.",
+            "You're really blunt."
+          ]
+        },
+        {
+          "prompt": "\"Oh, did you hear that? Haha... Yeah, I'm a little behind on my sister's medical bills.\"",
+          "answers": [
+            "You have it rough.",
+            "Are they that expensive?",
+            "Don't overdo it."
+          ]
+        },
+        {
+          "prompt": "\"...Seriously, though. You're still young, so you really need to eat properly...\"",
+          "answers": [
+            "Thanks.",
+            "I'll work hard at it.",
+            "You're not in character."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "4",
+      "sourceLabel": "4",
+      "groups": [
+        {
+          "prompt": "\"I want to provide more services for you...\"",
+          "answers": [
+            "That would be great.",
+            "What are you scheming?"
+          ]
+        },
+        {
+          "prompt": "\"But he said that he prioritizes 'younger' women!\"",
+          "answers": [
+            "How rude.",
+            "No surprise there.",
+            "How old ARE you?"
+          ]
+        },
+        {
+          "prompt": "\"I look pretty good as a maid, don't I?\"",
+          "answers": [
+            "Yes, you do.",
+            "You're pushing it.",
+            "You need to love yourself."
+          ]
+        },
+        {
+          "prompt": "\"I don't have a sick sister... All that stuff about the fees and charges was a lie too.\"",
+          "answers": [
+            "I already knew that.",
+            "Why did you lie to me?",
+            "You're a bad teacher."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "5",
+      "sourceLabel": "5",
+      "groups": [
+        {
+          "prompt": "\"You know you're being used for money... and you still request me?\"",
+          "answers": [
+            "It's fun.",
+            "I want to know more.",
+            "Who's the Master here?"
+          ]
+        },
+        {
+          "prompt": "\"He threatened me... saying that I'd be dismissed if I continued to tutor Takase-kun.\"",
+          "answers": [
+            "How terrible...",
+            "It was inevitable.",
+            "So, did you stop?"
+          ]
+        },
+        {
+          "prompt": "\"If only I had kept my promise to him...\"",
+          "answers": [
+            "It's not your fault.",
+            "It was bad luck.",
+            "It's no one's fault."
+          ]
+        },
+        {
+          "prompt": "\"So I ended up paying them the 'apology' money so they wouldn't sue me or say anything.\"",
+          "answers": [
+            "You OK with that?",
+            "Guardians, huh..."
+          ]
+        },
+        {
+          "prompt": "\"I've been coming here because of a random twist of fate, but we should say goodbye as well.\"",
+          "answers": [
+            "It's too late now.",
+            "What about our deal?",
+            "I want to see you again."
+          ]
+        },
+        {
+          "prompt": "\"There's always this nice curry smell around the place. Do you get to eat that place's curry every day?\"",
+          "answers": [
+            "Curry is all I eat.",
+            "You get bored of the taste.",
+            "You want some?"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "6",
+      "sourceLabel": "6",
+      "groups": [
+        {
+          "prompt": "\"Sorry... I need to take a break...\"",
+          "answers": [
+            "You just got here.",
+            "Want to rest a bit?",
+            "Give me back my money."
+          ]
+        },
+        {
+          "prompt": "\"I can't stop coughing...\"",
+          "answers": [
+            "Are you all right?",
+            "Have you seen a doctor?",
+            "You should go home."
+          ]
+        },
+        {
+          "prompt": "\"I had my boss give me more shifts. I had to beg him for them, but...\"",
+          "answers": [
+            "Are you okay?",
+            "Don't overdo it."
+          ]
+        },
+        {
+          "prompt": "\"If you neglect stuff like that, it makes you more likely to get sick.\"",
+          "answers": [
+            "I'll be fine.",
+            "Nah, too lazy.",
+            "How are you feeling, though?"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "7",
+      "sourceLabel": "7",
+      "groups": [
+        {
+          "prompt": "\"I should be able to send it out tomorrow...\"",
+          "answers": [
+            "Don't strain yourself.",
+            "Don't lie.",
+            "Don't pay them."
+          ]
+        },
+        {
+          "prompt": "\"I guess transferring to our sister company is the only way...\"",
+          "answers": [
+            "Sister company?",
+            "Can you make a lot there?",
+            "Romance route flag."
+          ]
+        },
+        {
+          "prompt": "\"So if his guardians demand money, then I just have to pay them...\"",
+          "answers": [
+            "That's the wrong choice.",
+            "Isn't there another way?",
+            "Just rest for now."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "8",
+      "sourceLabel": "8",
+      "groups": [
+        {
+          "prompt": "\"...So this is just what I have to do.\"",
+          "answers": [
+            "That's the wrong decision.",
+            "Please reconsider.",
+            "Is this really what you want?"
+          ]
+        },
+        {
+          "prompt": "\"That's why I'm going to quit both my teaching job and my maid job... What do you think?\"",
+          "answers": [
+            "You're running away.",
+            "If that's what you decided.",
+            "I need my teacher."
+          ]
+        },
+        {
+          "prompt": "\"And yet, I still felt the need to teach... I wonder why I feel that way even now.\"",
+          "answers": [
+            "Try to remember.",
+            "That's your answer.",
+            "Take a look at yourself."
+          ]
+        },
+        {
+          "prompt": "\"I can't make things right with Takase-kun like this...\"",
+          "answers": [
+            "Are you going to give up?",
+            "Mistakes can be fixed."
+          ]
+        },
+        {
+          "prompt": "\"And that is my answer! ...Well, what do you think?\"",
+          "answers": [
+            "Be confident in your answer.",
+            "That's the right choice.",
+            "You're asking a student?"
+          ]
+        },
+        {
+          "prompt": "\"But from now on, I'm going to protect you too. As your teacher, I will never betray you.\"",
+          "answers": [
+            "I want to protect you.",
+            "That's reassuring."
+          ]
+        },
+        {
+          "prompt": "\"But I felt so stuck facing it alone. It's thanks to you that I actually figured out what I need to do.\"",
+          "answers": [
+            "You're welcome.",
+            "So much for being a maid.",
+            "I'll do anything for you."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "9",
+      "sourceLabel": "9",
+      "groups": [
+        {
+          "prompt": "\"I bet I'll be an old woman by the time I achieve my dreams.\"",
+          "answers": [
+            "Nonsense.",
+            "You may be right.",
+            "Aren't you old already...?"
+          ]
+        },
+        {
+          "prompt": "\"Today marks the day I graduate from being your maid.\"",
+          "answers": [
+            "What a bummer.",
+            "Thank you for your service."
+          ]
+        },
+        {
+          "prompt": "\"Besides, won't you be lonely? Hm?\"",
+          "answers": [
+            "Not really.**",
+            "Romance route flag.*"
+          ]
+        },
+        {
+          "prompt": "* \"You don't want to give anybody the wrong idea. That could really hurt someone.\"",
+          "answers": [
+            "Got it.**",
+            "Romance route flag.*"
+          ]
+        },
+        {
+          "prompt": "* \"This situation isn't normal. I'm a teacher, and you're my student, you know?\"",
+          "answers": [
+            "I'm a master; you're a maid.**",
+            "Romance route flag."
+          ]
+        },
+        {
+          "prompt": "** \"But somewhere along the way, I forgot about all that... Reigniting your original resolve is easier said than done.\"",
+          "answers": [
+            "I agree.",
+            "You can do it.",
+            "You were a pretty good maid."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "MAX",
+      "sourceLabel": "10 (Friendship)",
+      "groups": [
+        {
+          "prompt": "\"I need to work hard so I can make up for all the times I let my students down in the past.\"",
+          "answers": [
+            "I'm glad to hear that.",
+            "Sounds like you're busy."
+          ]
+        },
+        {
+          "prompt": "\"I put up with the mess because you were my client, but you need to thoroughly clean in here!\"",
+          "answers": [
+            "I will.",
+            "You're not my mom...",
+            "Same goes for you."
+          ]
+        },
+        {
+          "prompt": "\"You're a member of the Phantom Thieves, right?\"",
+          "answers": [
+            "What are you talking about?",
+            "Why do you think that?",
+            "I'm just a high schooler."
+          ]
+        },
+        {
+          "prompt": "\"And you're the only one who knew about my situation.\"",
+          "answers": [
+            "You got me.",
+            "You have no proof.",
+            "...So what if I am?"
+          ]
+        },
+        {
+          "prompt": "\"A new path where I'll never abandon any of my students...\"",
+          "answers": [
+            "That sounds promising.",
+            "I'll make sure of it."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "MAX",
+      "sourceLabel": "10 (Romance)",
+      "groups": [
+        {
+          "prompt": "\"...I'm sorry.\"",
+          "answers": [
+            "...Really?",
+            "I see.",
+            "That's too bad..."
+          ]
+        },
+        {
+          "prompt": "\"...I'm a teacher... And you're my student...\"",
+          "answers": [
+            "It doesn't matter.",
+            "That's the best part."
+          ]
+        },
+        {
+          "prompt": "\"I'm restraining myself because you're so special to me...\"",
+          "answers": [
+            "We won't get caught.",
+            "Don't worry about it.",
+            "You're so responsible."
+          ]
+        },
+        {
+          "prompt": "\"Or is that the sort of thing a member of the Phantom Thieves is into?\"",
+          "answers": [
+            "What are you talking about?",
+            "When did you realize?"
+          ]
+        },
+        {
+          "prompt": "\"And you're the only one who knew about my situation.\"",
+          "answers": [
+            "You got me.",
+            "You have no proof.",
+            "...So what if I am?"
+          ]
+        },
+        {
+          "prompt": "\"A new path where I'll never abandon any of my students...\"",
+          "answers": [
+            "That sounds promising.",
+            "I'll make sure of it."
+          ]
+        },
+        {
+          "prompt": "\"I'll obey them, you know... even though I'm no longer a maid.\"",
+          "answers": [
+            "I want to rely on you.",
+            "I want you to rely on me."
+          ]
+        },
+        {
+          "prompt": "Ryuji: \"She keeps gettin' fish even as she nags... I'm impressed!\"",
+          "answers": [
+            "Call her \"Master\" Kawakami.",
+            "She's the true master fisher."
+          ]
+        },
+        {
+          "prompt": "\"What are you looking at?\"",
+          "answers": [
+            "Your swimsuit.",
+            "The Waikiki beach.",
+            "I can't really say."
+          ]
+        },
+        {
+          "prompt": "\"Tasting the local delicacies is an absolute must on vacation, don't you think?\"",
+          "answers": [
+            "It's the true pleasure of traveling.",
+            "Let's eat together.",
+            "Treat me."
+          ]
+        },
+        {
+          "prompt": "\"If that's true, then... I'm sorry.\"",
+          "answers": [
+            "There's nothing we can do about it.",
+            "I'll endure it.",
+            "I want to see you more."
+          ]
+        },
+        {
+          "prompt": "\"...Just kidding. It's to commemorate today.\"",
+          "answers": [
+            "Thanks.",
+            "Are these matching?"
+          ]
+        },
+        {
+          "prompt": "\"We should head back.\"",
+          "answers": [
+            "I don't want you to go.",
+            "Just a bit longer."
+          ]
+        },
+        {
+          "prompt": "\"That's today's youth for you, I guess.\"",
+          "answers": [
+            "You're right.",
+            "It's all fruitless effort.",
+            "You're quite dignified."
+          ]
+        },
+        {
+          "prompt": "\"I'll be there to help you.\"",
+          "answers": [
+            "Thanks.",
+            "That's reassuring.",
+            "You're the ideal maid."
+          ]
+        },
+        {
+          "prompt": "\"But depend on me sometimes, all right?\"",
+          "answers": [
+            "How about a massage?",
+            "Can I sleep on your lap?"
+          ]
+        },
+        {
+          "prompt": "\"...This is embarrassing.\"",
+          "answers": [
+            "It looks delicious.",
+            "This makes me happy."
+          ]
+        },
+        {
+          "prompt": "\"I'm going to start acting like an honest teacher again.\"",
+          "answers": [
+            "I'm looking forward to it.",
+            "You know about art too?",
+            "No more \"Master\"?"
           ]
         }
       ]
@@ -7404,6 +9314,632 @@ export const dialoguePrompts = {
             "Can he join us?",
             "He wants to play too.",
             "He can hold our bags."
+          ]
+        }
+      ]
+    }
+  ],
+  "Takuto Maruki": [
+    {
+      "rank": "1",
+      "sourceLabel": "1",
+      "groups": [
+        {
+          "prompt": "\"-kun, it must've been especially tough for you after having just transferred here.\"",
+          "answers": [
+            "Not really.",
+            "Yeah, it was.",
+            "To think I'd end up in a castle..."
+          ]
+        },
+        {
+          "prompt": "\"All you can eat... would be nice, but there's still plenty to be had. So, how about it?\"",
+          "answers": [
+            "We're not little kids.",
+            "Tell me more of these snacks..."
+          ]
+        },
+        {
+          "prompt": "Ryuji: \"So, which way are you leanin'?\"",
+          "answers": [
+            "No harm in a little chat.",
+            "I'm going to do it."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "2",
+      "sourceLabel": "2",
+      "groups": [
+        {
+          "prompt": "Yoshizawa: \"Are you here for a session as well?\"",
+          "answers": [
+            "That's right.",
+            "You too, huh?"
+          ]
+        },
+        {
+          "prompt": "\"Welcome! Thank you for coming.\"",
+          "answers": [
+            "Didn't have much choice.",
+            "We made a deal.",
+            "I'm a little nervous."
+          ]
+        },
+        {
+          "prompt": "\"Well, full disclosure... The school gave me a brief rundown of the circumstances surrounding your transfer here.\"",
+          "answers": [
+            "It's in the past.",
+            "I'm doing okay now.",
+            "So much for my privacy."
+          ]
+        },
+        {
+          "prompt": "\"...Then again, maybe that's a little weird for you to hear from a guy you just met, huh?\"",
+          "answers": [
+            "But it sounds right.",
+            "Yep.",
+            "Kinda creeping me out here."
+          ]
+        },
+        {
+          "prompt": "\"If I get far enough with it, I think it'll be able to help a lot of people! So...?\"",
+          "answers": [
+            "So... what?",
+            "I'll need more details.",
+            "Uh..."
+          ]
+        },
+        {
+          "prompt": "\"And, uh... I've got a lot of snacks, too! You can have them! They're yours!\"",
+          "answers": [
+            "Well, okay.",
+            "Better make it worth it.",
+            "Why me, though?"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "3",
+      "sourceLabel": "3",
+      "groups": [
+        {
+          "prompt": "\"But at the very least, I'm glad the ones who came to me have taken some steps towards recovery.\"",
+          "answers": [
+            "So they have, huh?",
+            "You worry too much.",
+            "Thanks to you, probably."
+          ]
+        },
+        {
+          "prompt": "\"You remember how I asked you to help me with my research?\"",
+          "answers": [
+            "Of course.",
+            "Yeah, for our deal.",
+            "I forgot."
+          ]
+        },
+        {
+          "prompt": "\"Now, this is my question to you... When do you truly feel pain in your heart, Joker-kun?\"",
+          "answers": [
+            "When someone betrays me.",
+            "When I lie.",
+            "When I get punched."
+          ]
+        },
+        {
+          "prompt": "\"Do you have any thoughts on this kind of pain, Joker-kun?\"",
+          "answers": [
+            "That one seems necessary.",
+            "We'd be better off without it.",
+            "It's a seed for new loves."
+          ]
+        },
+        {
+          "prompt": "\"You helped me realize that purpose again. Thank you.\"",
+          "answers": [
+            "Did that help?",
+            "Don't worry about it."
+          ]
+        },
+        {
+          "prompt": "\"And I thought I'd thank you once again for your help earlier.\"",
+          "answers": [
+            "Good work over there.",
+            "So you're actually working?",
+            "Getting to your research now?"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "4",
+      "sourceLabel": "4",
+      "groups": [
+        {
+          "prompt": "\"Well, Joker-kun, I just found out how scary cats can be, despite their cuteness...\"",
+          "answers": [
+            "Where's this coming from?",
+            "What are you talking about?"
+          ]
+        },
+        {
+          "prompt": "\"I had no idea a cat's claws were so sharp...\"",
+          "answers": [
+            "I know, right...?",
+            "It's not the worst.",
+            "Talk about a reward."
+          ]
+        },
+        {
+          "prompt": "\"If only we could somehow directly reduce emotional pain in a healthy way—like putting antibiotics on a scratch.\"",
+          "answers": [
+            "That'd be great.",
+            "Is that possible?",
+            "Is that what you're researching?"
+          ]
+        },
+        {
+          "prompt": "\"I have such a torturous burning deep inside me!\"",
+          "answers": [
+            "......",
+            "Are you okay?"
+          ]
+        },
+        {
+          "prompt": "\"But we'll even be able to perform more effective treatment for those people with wounded hearts.\"",
+          "answers": [
+            "That's a grand plan.",
+            "You're so kind."
+          ]
+        },
+        {
+          "prompt": "\"Say, would you like to try being my assistant? Of course, I'm on a shoestring budget, so I wouldn't be able to pay you!\"",
+          "answers": [
+            "That sounds fun.",
+            "I'm not the \"free labor\" type.",
+            "Nope."
+          ]
+        },
+        {
+          "prompt": "\"I should've asked this sooner, but... is this leaving you with any mental fatigue? Is your schoolwork being affected?\"",
+          "answers": [
+            "I feel completely fine.",
+            "It's part of our deal, so...",
+            "I'm struggling, to be honest."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "5",
+      "sourceLabel": "5",
+      "groups": [
+        {
+          "prompt": "\"I thought I'd get a surprise for you, since you've been kind enough to indulge me all this time. Go ahead, enjoy!\"",
+          "answers": [
+            "This looks great!",
+            "How old do you think I am?",
+            "I could just take cash..."
+          ]
+        },
+        {
+          "prompt": "\"Which container's cookies were marked as tasting better? Any guesses?\"",
+          "answers": [
+            "The one-cookie container.",
+            "The ten-cookie container.",
+            "It was a tie."
+          ]
+        },
+        {
+          "prompt": "\"You can see this law in action just by observing how excited people get over limited-edition merchandise.\"",
+          "answers": [
+            "I never considered that.",
+            "They're getting played.",
+            "You know, you're right."
+          ]
+        },
+        {
+          "prompt": "\"How do you feel about that idea? That your unconscious desires may have changed the taste of the cookie?\"",
+          "answers": [
+            "My senses lied to me!",
+            "Hey, as long as it tastes good.",
+            "It's a little scary."
+          ]
+        },
+        {
+          "prompt": "\"That cookie would have remained more delicious than usual. It would have been a subjective truth of your reality.\"",
+          "answers": [
+            "Not \"truth\" exactly...",
+            "I guess so.",
+            "I don't know..."
+          ]
+        },
+        {
+          "prompt": "\"It was supposed to be a chance for us to relax, but it ended up being another big academic discussion...\"",
+          "answers": [
+            "I really don't mind.",
+            "Come on, man.",
+            "It was thought-provoking."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "6",
+      "sourceLabel": "6",
+      "groups": [
+        {
+          "prompt": "\"You must have a real knack for coffee, Joker-kun. This is fantastic.\"",
+          "answers": [
+            "You wanted to talk?",
+            "Another cup?",
+            "We've got curry too."
+          ]
+        },
+        {
+          "prompt": "\"So I'm sorry to bother you, but I'd appreciate if you'd help me talk through this again.\"",
+          "answers": [
+            "I can do that.",
+            "It's a deal.",
+            "I'm not up for this..."
+          ]
+        },
+        {
+          "prompt": "\"With the way things are now, I can only save the people directly within my reach.\"",
+          "answers": [
+            "Isn't that enough?",
+            "You need more than that?"
+          ]
+        },
+        {
+          "prompt": "\"I don't think that would be enough to finally beat trauma. And I guess that's what I ultimately realized.\"",
+          "answers": [
+            "So what CAN we do?",
+            "It’s a hard question...",
+            "So give up."
+          ]
+        },
+        {
+          "prompt": "\"Hm? -kun... Did I say something wrong?\"",
+          "answers": [
+            "All hearts share some things.",
+            "What if they're connected?"
+          ]
+        },
+        {
+          "prompt": "\"Yes, right, and... If I can combine this with the theory I'm verifying, I can tie it all back to cognitive psience, too...!\"",
+          "answers": [
+            "Calm down.",
+            "Where's this coming from?",
+            "Cognitive psience?"
+          ]
+        },
+        {
+          "prompt": "\"Sorry for... hah... rushing out... phew... so suddenly... hah... earlier...\"",
+          "answers": [
+            "Calm down.",
+            "What's going on?",
+            "Heavy breathing? Pervert."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "7",
+      "sourceLabel": "7",
+      "groups": [
+        {
+          "prompt": "\"Maybe it's a little hard to believe, but I guess I've taken an academic interest in them.\"",
+          "answers": [
+            "You really are dedicated.",
+            "Are they even relevant?",
+            "Are you a fan?"
+          ]
+        },
+        {
+          "prompt": "\"How is such a feat even possible? Any ideas, Joker-kun?\"",
+          "answers": [
+            "No idea.",
+            "As in, removing them?",
+            "How about you, Maruki?"
+          ]
+        },
+        {
+          "prompt": "\"So. Does that remind you of anything?\"",
+          "answers": [
+            "The change of heart...?",
+            "......"
+          ]
+        },
+        {
+          "prompt": "\"Hey, Joker-kun. You think I'm getting anywhere here?\"",
+          "answers": [
+            "I have no clue.",
+            "Sounds pretty far-fetched.",
+            "It's intriguing."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "8",
+      "sourceLabel": "8",
+      "groups": [
+        {
+          "prompt": "\"-kun, you're in for a real treat today! I know it's been a while since you've had one, too!\"",
+          "answers": [
+            "I'm good on cookies, thanks.",
+            "What do you mean?",
+            "Thanks, but I should get going."
+          ]
+        },
+        {
+          "prompt": "\"I'd like to take you to that buffet, as my way of thanking you. How does that sound?\"",
+          "answers": [
+            "Ooh, really?",
+            "Can you afford that?",
+            "Sorry, I prefer sushi."
+          ]
+        },
+        {
+          "prompt": "\"No holding back—eat as much as you please!\"",
+          "answers": [
+            "Thanks for the food!",
+            "Self-control much?",
+            "This is quite the spread."
+          ]
+        },
+        {
+          "prompt": "\"Oh, he's uhhh... how do I put it?\"",
+          "answers": [
+            "I'm his pupil.",
+            "It's complicated...",
+            "We've made a deal."
+          ]
+        },
+        {
+          "prompt": "\"I had meant to mention this earlier, but... my paper is finally almost finished.\"",
+          "answers": [
+            "Congratulations.",
+            "Way to go."
+          ]
+        },
+        {
+          "prompt": "Shibusawa: \"Oh, don't worry so much. Don't you wanna congratulate him too, Joker-kun?\"",
+          "answers": [
+            "I sure do.",
+            "Let's celebrate.",
+            "I don't care who pays."
+          ]
+        },
+        {
+          "prompt": "\"You were going to ask about Rumi, right? Don't worry, it's fine.\"",
+          "answers": [
+            "She a girlfriend of yours?",
+            "Who's Rumi?",
+            "Should I leave you two to talk?"
+          ]
+        },
+        {
+          "prompt": "\"Well... maybe it's because he knows I'm a little careless, though.\"",
+          "answers": [
+            "He's a good friend.",
+            "Learn some independence.",
+            "You'll get the tab next time."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "9",
+      "sourceLabel": "9",
+      "groups": [
+        {
+          "prompt": "\"You remember how my former girlfriend came up the other day? Rumi?\"",
+          "answers": [
+            "Yeah.",
+            "Kind of."
+          ]
+        },
+        {
+          "prompt": "\"I think this'll probably be the last time I come to you about the paper.\"",
+          "answers": [
+            "Kind of sad...",
+            "Is our deal over?",
+            "Well... take care of yourself."
+          ]
+        }
+      ]
+    },
+    {
+      "rank": "MAX",
+      "sourceLabel": "10",
+      "groups": [
+        {
+          "prompt": "\"Good morning. I know this is last-minute, but if it's possible, could you come and see me during lunch today?\"",
+          "answers": [
+            "I'm free for lunch.",
+            "Sure."
+          ]
+        },
+        {
+          "prompt": "\"Glad to hear it! I wanted to discuss something with you, since it'll be our last chance to do so here.\"",
+          "answers": [
+            "Last chance?",
+            "Oh, that's right..."
+          ]
+        },
+        {
+          "prompt": "\"I'd always passed on it due to the price, but today is special! Not only that—I ordered the deluxe bowls for us!\"",
+          "answers": [
+            "Let's dig in.",
+            "Ooh, fancy.",
+            "Thank you."
+          ]
+        },
+        {
+          "prompt": "\"...Too bad I can't see anything now.\"",
+          "answers": [
+            "Same here.",
+            "The life of a four-eyes..."
+          ]
+        },
+        {
+          "prompt": "\"My paper's done.\"",
+          "answers": [
+            "Congratulations.",
+            "You did it!"
+          ]
+        },
+        {
+          "prompt": "\"...and as a phantom thief as well.\"",
+          "answers": [
+            "How do you know that?",
+            "What do you mean?"
+          ]
+        },
+        {
+          "prompt": "\"That is what I hypothesize as being the 'change of heart' you induce in your targets.\"",
+          "answers": [
+            "You really know your stuff.",
+            "......"
+          ]
+        },
+        {
+          "prompt": "\"I was almost certain Mr. Kamoshida's change of heart was provoked by the three of you.\"",
+          "answers": [
+            "Why'd you keep quiet?",
+            "What's your game here?"
+          ]
+        },
+        {
+          "prompt": "\"But I think that's everything I'd kept from you... Does that change your opinion of me?\"",
+          "answers": [
+            "Well, we made a deal.",
+            "Will you rat us out?"
+          ]
+        },
+        {
+          "prompt": "\"Though, it'll likely be through different means than how the Phantom Thieves reform members of society.\"",
+          "answers": [
+            "We all define justice differently.",
+            "I'll do my best too."
+          ]
+        },
+        {
+          "prompt": "\"We'll meet again though, right?\"",
+          "answers": [
+            "I'm sure of it.",
+            "Definitely."
+          ]
+        },
+        {
+          "prompt": "\"For the sake of Yoshizawa-san, and the rest of your friends... I ask you to give me your answer.\"",
+          "answers": [
+            "I can't accept this reality.",
+            "I'll accept this reality."
+          ]
+        },
+        {
+          "prompt": "* \"Oh, what a relief... you'll accept this world?\"",
+          "answers": [
+            "I need to think it over.",
+            "I'm serious."
+          ]
+        },
+        {
+          "prompt": "\"I've been concerned about a potential relapse, considering her difficulties with accepting this reality.\"",
+          "answers": [
+            "She's just fine.",
+            "She's one tough lady."
+          ]
+        },
+        {
+          "prompt": "\"I want to confirm with you one last time: is there no other way to come to an agreement besides fighting?\"",
+          "answers": [
+            "......",
+            "We can't accept this reality."
+          ]
+        },
+        {
+          "prompt": "\"If you just stay, you'll never have to suffer from the pain of loss, or the pain of having people and things stolen from you!\"",
+          "answers": [
+            "Like you have?",
+            "What was stolen from you?"
+          ]
+        },
+        {
+          "prompt": "\"So let me ask you the same: after really considering every option, do any of you have doubts about your views?\"",
+          "answers": [
+            "What do you mean?",
+            "What are you getting at?"
+          ]
+        },
+        {
+          "prompt": "\"Please, accept my gift, for your friend's sake and your own!\"",
+          "answers": [
+            "I can't.",
+            "I'll accept it."
+          ]
+        },
+        {
+          "prompt": "* Morgana: \"Hey... are you sure?\"",
+          "answers": [
+            "I need to think it over again.",
+            "I'm sure."
+          ]
+        },
+        {
+          "prompt": "\"I'll be going now.\"",
+          "answers": [
+            "This is for you.",
+            "You forgot something."
+          ]
+        },
+        {
+          "prompt": "\"It looks like I have your answer.\"",
+          "answers": [
+            "It's time to finish this.",
+            "We're sure of ourselves now.",
+            "I'm sorry."
+          ]
+        },
+        {
+          "prompt": "\"Sorry, but I won't admit defeat just yet.\"",
+          "answers": [
+            "Please, stop.",
+            "Please give this up."
+          ]
+        },
+        {
+          "prompt": "\"I gave up everything else... I dedicated all that I have to this... But I still... Why?\"",
+          "answers": [
+            "You're running from the past.",
+            "You're denying reality."
+          ]
+        },
+        {
+          "prompt": "\"Don't you, of all people, understand that!?\"",
+          "answers": [
+            "You have to look to the future.",
+            "Even then, you keep going."
+          ]
+        },
+        {
+          "prompt": "\"You're the only one I can ask to help me with this, Joker-kun.\"",
+          "answers": [
+            "Very well.",
+            "I'm here for you."
+          ]
+        },
+        {
+          "prompt": "\"Please... let go of my hand.\"",
+          "answers": [
+            "We're going back together.",
+            "I won't let it end like this."
           ]
         }
       ]

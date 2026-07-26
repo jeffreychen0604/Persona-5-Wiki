@@ -37,10 +37,22 @@
       "dialogueGroups": 54,
       "status": "ok"
     },
+    "Kasumi Yoshizawa": {
+      "page": "Confidant/Sumire Yoshizawa",
+      "rankRecords": 12,
+      "dialogueGroups": 108,
+      "status": "ok"
+    },
     "Goro Akechi": {
       "page": "Confidant/Goro Akechi",
       "rankRecords": 9,
       "dialogueGroups": 59,
+      "status": "ok"
+    },
+    "Sadayo Kawakami": {
+      "page": "Confidant/Sadayo Kawakami",
+      "rankRecords": 22,
+      "dialogueGroups": 116,
       "status": "ok"
     },
     "Tae Takemi": {
@@ -96,14 +108,16 @@
       "rankRecords": 11,
       "dialogueGroups": 57,
       "status": "ok"
+    },
+    "Takuto Maruki": {
+      "page": "Confidant/Takuto Maruki",
+      "rankRecords": 10,
+      "dialogueGroups": 75,
+      "status": "ok"
     }
   },
-  "errors": {
-    "Kasumi Yoshizawa": "Persona 5 Royal dialogue subsection not found",
-    "Sadayo Kawakami": "Persona 5 Royal dialogue subsection not found",
-    "Takuto Maruki": "Persona 5 Royal dialogue subsection not found"
-  },
-  "totalDialogueGroups": 831,
-  "successfulCharacters": 16,
-  "failedCharacters": 3
+  "errors": {},
+  "totalDialogueGroups": 1130,
+  "successfulCharacters": 19,
+  "failedCharacters": 0
 }
