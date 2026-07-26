@@ -4,10 +4,15 @@ on:
   push:
     paths:
       - '.github/workflows/seed-local-data.yml'
+      - 'scripts/sync_dialogue_prompts.py'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: seed-local-guide-data
+  cancel-in-progress: false
 
 jobs:
   seed-data:
@@ -18,52 +23,40 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download structured Confidant dataset into repository
+      - name: Download structured Confidant answer dataset
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p data debug
+          mkdir -p data
           curl -fsSL \
             'https://raw.githubusercontent.com/olegbl/p5rcheatsheet/9769523572eb6b955cd1cb4b672e8fb9b9ce8b39/src/data/confidants.js' \
             -o data/confidants.js
           grep -q 'export const confidants' data/confidants.js
 
-      - name: Inspect one full dialogue source
+      - name: Build repository-local dialogue context
         shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import json, urllib.parse, urllib.request
-          page = 'Confidant/Ann Takamaki'
-          params = urllib.parse.urlencode({
-              'action': 'parse',
-              'page': page,
-              'prop': 'wikitext',
-              'format': 'json',
-              'formatversion': 2,
-              'origin': '*',
-          })
-          req = urllib.request.Request(
-              'https://megamitensei.fandom.com/api.php?' + params,
-              headers={'User-Agent': 'Persona-5-Wiki data sync/1.0'}
-          )
-          with urllib.request.urlopen(req, timeout=45) as response:
-              payload = json.load(response)
-          text = payload['parse']['wikitext']
-          open('debug/ann-wikitext.txt', 'w', encoding='utf-8').write(text)
-          print('Downloaded', len(text), 'characters')
-          PY
+          python scripts/sync_dialogue_prompts.py
+          grep -q 'export const dialoguePrompts' data/dialogue-prompts.js
+          node --check data/dialogue-prompts.js
 
-      - name: Commit repository-local data
+      - name: Remove temporary inspection data
+        shell: bash
+        run: |
+          rm -f debug/ann-wikitext.txt
+          rmdir debug 2>/dev/null || true
+
+      - name: Commit repository-local guide data
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/confidants.js debug/ann-wikitext.txt
+          git add -A data debug
           if git diff --cached --quiet; then
-            echo 'Local data is already current.'
+            echo 'Repository-local guide data is already current.'
           else
-            git commit -m 'Inspect Confidant dialogue source structure'
+            git commit -m 'Add repository-local Confidant dialogue context'
             git push
           fi
