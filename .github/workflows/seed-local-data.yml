@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/seed-local-data.yml'
       - 'scripts/sync_dialogue_prompts.py'
+      - 'scripts/validate_dialogue_matching.mjs'
   workflow_dispatch:
 
 permissions:
@@ -41,6 +42,16 @@ jobs:
           grep -q 'export const dialoguePrompts' data/dialogue-prompts.js
           test -s data/dialogue-prompts-report.json
 
+      - name: Validate prompt matching coverage
+        shell: bash
+        run: |
+          set +e
+          node --experimental-default-type=module scripts/validate_dialogue_matching.mjs
+          validation_status=$?
+          set -e
+          test -s data/dialogue-match-report.json
+          echo "Dialogue validation exit status: ${validation_status}"
+
       - name: Remove temporary inspection data
         shell: bash
         run: |
@@ -57,6 +68,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Repository-local guide data is already current.'
           else
-            git commit -m 'Add repository-local Confidant dialogue context'
+            git commit -m 'Validate repository-local Confidant dialogue context'
             git push
           fi
