@@ -53,7 +53,7 @@ for (const confidant of confidants) {
     const key = canonicalRank(rank.label);
     const candidates = sourceRecords
       .filter(record => record.rank === key)
-      .flatMap((record, recordIndex) => (record.groups || []).map((group, groupIndex) => ({ ...group, recordIndex, groupIndex })));
+      .flatMap((record, recordIndex) => (record.groups || []).map((group, groupIndex) => ({ ...group, recordIndex, groupIndex, sourceLabel: record.sourceLabel })));
     const used = new Set();
 
     responseGroups.forEach((group, groupIndex) => {
@@ -78,15 +78,36 @@ for (const confidant of confidants) {
       }
 
       const positional = candidates.findIndex((candidate, index) => !used.has(index) && candidate.groupIndex === groupIndex);
+      const diagnostic = {
+        character: confidant.name,
+        rank: rank.label,
+        canonicalRank: key,
+        group: groupIndex + 1,
+        answers: group,
+        bestScore: Number.isFinite(best.score) ? best.score : null,
+        bestCandidate: bestIndex >= 0 ? {
+          prompt: candidates[bestIndex].prompt,
+          answers: candidates[bestIndex].answers,
+          sourceLabel: candidates[bestIndex].sourceLabel,
+          sourceGroup: candidates[bestIndex].groupIndex + 1,
+        } : null,
+        positionalCandidate: positional >= 0 ? {
+          prompt: candidates[positional].prompt,
+          answers: candidates[positional].answers,
+          sourceLabel: candidates[positional].sourceLabel,
+          sourceGroup: candidates[positional].groupIndex + 1,
+        } : null,
+      };
+
       if (positional >= 0) {
         used.add(positional);
         stats.positionalFallbacks += 1;
         report.totals.positionalFallbacks += 1;
-        report.unresolved.push({ character: confidant.name, rank: rank.label, group: groupIndex + 1, mode: 'positional' });
+        report.unresolved.push({ ...diagnostic, mode: 'positional' });
       } else {
         stats.missing += 1;
         report.totals.missing += 1;
-        report.unresolved.push({ character: confidant.name, rank: rank.label, group: groupIndex + 1, mode: 'missing' });
+        report.unresolved.push({ ...diagnostic, mode: 'missing' });
       }
     });
   }
