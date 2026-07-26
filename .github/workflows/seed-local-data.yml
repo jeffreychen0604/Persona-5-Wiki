@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/seed-local-data.yml'
       - 'scripts/sync_dialogue_prompts.py'
+      - 'scripts/sync_tv_quiz.py'
       - 'scripts/validate_dialogue_matching.mjs'
       - 'data/dialogue-overrides.js'
       - 'app.js'
@@ -45,12 +46,22 @@ jobs:
           grep -q 'export const dialoguePrompts' data/dialogue-prompts.js
           test -s data/dialogue-prompts-report.json
 
+      - name: Build repository-local TV Quiz data
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/sync_tv_quiz.py
+          grep -q 'export const tvQuiz' data/quiz.js
+          test -s data/quiz-report.json
+          grep -q '"quizQuestions": 11' data/quiz-report.json
+
       - name: Validate application syntax
         shell: bash
         run: |
           set -euo pipefail
           node --experimental-default-type=module --check app.js
           node --experimental-default-type=module --check data/dialogue-overrides.js
+          node --experimental-default-type=module --check data/quiz.js
 
       - name: Require complete prompt matching coverage
         shell: bash
@@ -78,6 +89,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Repository-local guide data is already current.'
           else
-            git commit -m 'Validate complete Confidant dialogue context coverage'
+            git commit -m 'Refresh repository-local guide data'
             git push
           fi
