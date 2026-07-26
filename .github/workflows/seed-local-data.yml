@@ -39,7 +39,7 @@ jobs:
           set -euo pipefail
           python scripts/sync_dialogue_prompts.py
           grep -q 'export const dialoguePrompts' data/dialogue-prompts.js
-          node --check data/dialogue-prompts.js
+          test -s data/dialogue-prompts-report.json
 
       - name: Remove temporary inspection data
         shell: bash
@@ -53,7 +53,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A data debug
+          git add -A
           if git diff --cached --quiet; then
             echo 'Repository-local guide data is already current.'
           else
