@@ -44,7 +44,7 @@ SOURCES: list[tuple[str, list[str]]] = [
 ]
 
 API = "https://megamitensei.fandom.com/api.php"
-USER_AGENT = "Persona-5-Wiki dialogue context sync/1.1 (GitHub Pages data build)"
+USER_AGENT = "Persona-5-Wiki dialogue context sync/1.2 (GitHub Pages data build)"
 
 
 def fetch_wikitext(page_candidates: list[str]) -> tuple[str, str]:
@@ -127,9 +127,10 @@ def extract_royal_section(wikitext: str) -> str:
         r"(?mi)^={2,5}\s*''?\s*Persona 5 Royal\s*''?\s*={2,5}\s*$",
         dialogue,
     )
-    if not royal:
-        raise ValueError("Persona 5 Royal dialogue subsection not found")
-    section = dialogue[royal.end() :]
+    # Royal-only pages and some Fandom tab layouts do not expose a dedicated
+    # Royal heading in raw wikitext. In those cases, parse the entire Dialogue
+    # Options section; answer-text matching in app.js selects the correct variant.
+    section = dialogue[royal.end() :] if royal else dialogue
     next_major = re.search(r"(?m)^==[^=].*?==\s*$", section)
     return section[: next_major.start()] if next_major else section
 
@@ -240,7 +241,7 @@ def main() -> None:
             }
             total_groups += group_count
             print(f"{name}: {len(records)} rank records, {group_count} dialogue groups")
-        except Exception as exc:  # Keep valid characters even when one page changes shape.
+        except Exception as exc:
             report["errors"][name] = str(exc)
             print(f"ERROR {name}: {exc}")
         time.sleep(0.35)
