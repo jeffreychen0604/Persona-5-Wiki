@@ -1,0 +1,200 @@
+{
+  "generatedAt": "2026-07-26T12:51:53.896Z",
+  "totals": {
+    "answerGroups": 806,
+    "directMatches": 794,
+    "positionalFallbacks": 6,
+    "missing": 6,
+    "directCoverage": 98.51
+  },
+  "characters": {
+    "Ryuji Sakamoto": {
+      "answerGroups": 34,
+      "directMatches": 34,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Takuto Maruki": {
+      "answerGroups": 45,
+      "directMatches": 45,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Tae Takemi": {
+      "answerGroups": 41,
+      "directMatches": 41,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Ichiko Ohya": {
+      "answerGroups": 44,
+      "directMatches": 44,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Yusuke Kitagawa": {
+      "answerGroups": 32,
+      "directMatches": 32,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Haru Okumura": {
+      "answerGroups": 43,
+      "directMatches": 43,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Kasumi Yoshizawa": {
+      "answerGroups": 78,
+      "directMatches": 78,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Chihaya Mifune": {
+      "answerGroups": 42,
+      "directMatches": 42,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Munehisa Iwai": {
+      "answerGroups": 42,
+      "directMatches": 42,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Futaba Sakura": {
+      "answerGroups": 40,
+      "directMatches": 39,
+      "positionalFallbacks": 1,
+      "missing": 0
+    },
+    "Sojiro Sakura": {
+      "answerGroups": 30,
+      "directMatches": 28,
+      "positionalFallbacks": 1,
+      "missing": 1
+    },
+    "Goro Akechi": {
+      "answerGroups": 46,
+      "directMatches": 46,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Ann Takamaki": {
+      "answerGroups": 54,
+      "directMatches": 54,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Yuuki Mishima": {
+      "answerGroups": 43,
+      "directMatches": 43,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Makoto Niijima": {
+      "answerGroups": 43,
+      "directMatches": 42,
+      "positionalFallbacks": 1,
+      "missing": 0
+    },
+    "Hifumi Togo": {
+      "answerGroups": 35,
+      "directMatches": 35,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Toranosuke Yoshida": {
+      "answerGroups": 27,
+      "directMatches": 27,
+      "positionalFallbacks": 0,
+      "missing": 0
+    },
+    "Sadayo Kawakami": {
+      "answerGroups": 50,
+      "directMatches": 47,
+      "positionalFallbacks": 0,
+      "missing": 3
+    },
+    "Shinya Oda": {
+      "answerGroups": 37,
+      "directMatches": 32,
+      "positionalFallbacks": 3,
+      "missing": 2
+    }
+  },
+  "unresolved": [
+    {
+      "character": "Futaba Sakura",
+      "rank": "Rank 9",
+      "group": 5,
+      "mode": "positional"
+    },
+    {
+      "character": "Sojiro Sakura",
+      "rank": "Rank MAX",
+      "group": 1,
+      "mode": "positional"
+    },
+    {
+      "character": "Sojiro Sakura",
+      "rank": "Rank MAX",
+      "group": 2,
+      "mode": "missing"
+    },
+    {
+      "character": "Makoto Niijima",
+      "rank": "Rank 9",
+      "group": 7,
+      "mode": "positional"
+    },
+    {
+      "character": "Sadayo Kawakami",
+      "rank": "Rank 8.5",
+      "group": 1,
+      "mode": "missing"
+    },
+    {
+      "character": "Sadayo Kawakami",
+      "rank": "Rank 8.5",
+      "group": 2,
+      "mode": "missing"
+    },
+    {
+      "character": "Sadayo Kawakami",
+      "rank": "Rank 8.5",
+      "group": 3,
+      "mode": "missing"
+    },
+    {
+      "character": "Shinya Oda",
+      "rank": "Rank 3",
+      "group": 1,
+      "mode": "positional"
+    },
+    {
+      "character": "Shinya Oda",
+      "rank": "Rank 3",
+      "group": 2,
+      "mode": "positional"
+    },
+    {
+      "character": "Shinya Oda",
+      "rank": "Rank 3",
+      "group": 3,
+      "mode": "positional"
+    },
+    {
+      "character": "Shinya Oda",
+      "rank": "Rank 3",
+      "group": 4,
+      "mode": "missing"
+    },
+    {
+      "character": "Shinya Oda",
+      "rank": "Rank 3",
+      "group": 5,
+      "mode": "missing"
+    }
+  ]
+}
