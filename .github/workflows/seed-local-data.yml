@@ -1,0 +1,43 @@
+name: Seed local guide data
+
+on:
+  push:
+    paths:
+      - '.github/workflows/seed-local-data.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  seed-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download structured Confidant dataset into repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          curl -fsSL \
+            'https://raw.githubusercontent.com/olegbl/p5rcheatsheet/9769523572eb6b955cd1cb4b672e8fb9b9ce8b39/src/data/confidants.js' \
+            -o data/confidants.js
+          grep -q 'export const confidants' data/confidants.js
+
+      - name: Commit repository-local data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/confidants.js
+          if git diff --cached --quiet; then
+            echo 'Local Confidant data is already current.'
+          else
+            git commit -m 'Add repository-local Confidant data'
+            git push
+          fi
