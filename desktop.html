@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="color-scheme" content="dark">
+  <title>P5R Guide — Desktop</title>
+  <link rel="stylesheet" href="./styles.css?v=8">
+  <link rel="stylesheet" href="./dialogue.css?v=8">
+  <link rel="stylesheet" href="./quiz.css?v=8">
+  <link rel="stylesheet" href="./negotiation.css?v=8">
+  <link rel="stylesheet" href="./fusion.css?v=8">
+  <link rel="stylesheet" href="./desktop.css?v=1">
+</head>
+<body class="desktopMode">
+  <header class="topbar desktopTopbar">
+    <div class="brand">
+      <span class="logo">P5R</span>
+      <span><strong>P5R Desktop Guide</strong><small>Shared repository data edition</small></span>
+    </div>
+    <a class="viewSwitch" href="./">Open mobile view</a>
+  </header>
+
+  <div class="desktopShell">
+    <aside class="desktopSidebar">
+      <section class="hero">
+        <small>Persona 5 Royal</small>
+        <h1 id="heroTitle">Confidant Guide</h1>
+        <p id="heroText">Read each dialogue prompt before choosing the best response.</p>
+        <div class="status"><i></i><span>Preloaded from this repository</span></div>
+      </section>
+
+      <section class="searchbar">
+        <input id="searchInput" type="search" placeholder="Search dialogue, answer, ability or requirement…" autocomplete="off">
+      </section>
+
+      <nav class="bottomNav desktopNav" aria-label="Main sections">
+        <button class="navButton active" data-view="confidants"><span>♟</span><small>Confidants</small></button>
+        <button class="navButton" data-view="class"><span>✎</span><small>Class</small></button>
+        <button class="quizNavButton" id="quizNav" type="button"><span>▣</span><small>TV Quiz</small></button>
+        <button class="guideNavButton" id="shadowsNav" type="button"><span>◈</span><small>Shadows</small></button>
+        <button class="guideNavButton" id="negotiationNav" type="button"><span>◆</span><small>Negotiate</small></button>
+        <button class="fusionNavButton" id="fusionNav" type="button"><span>◇</span><small>Fusion DB</small></button>
+      </nav>
+
+      <div class="filterLabel">Current guide filters</div>
+      <nav id="filterChips" class="chips" aria-label="Guide filters"></nav>
+    </aside>
+
+    <main class="panel desktopPanel">
+      <header class="panelHead">
+        <span><strong id="panelTitle">Loading guide…</strong><small id="panelMeta">Local structured data</small></span>
+        <a id="sourceLink" class="sourceLink" href="#" target="_blank" rel="noreferrer">Source ↗</a>
+      </header>
+      <nav id="rankJumps" class="rankJumps" aria-label="Rank shortcuts"></nav>
+      <article id="content" class="content" aria-live="polite">
+        <div class="loading">Preparing local guide data…</div>
+      </article>
+    </main>
+  </div>
+
+  <button id="backTop" class="backTop" aria-label="Back to top">↑</button>
+  <noscript>This guide requires JavaScript, but all guide data is stored locally in the repository.</noscript>
+
+  <script type="module" src="./app.js?v=8"></script>
+  <script type="module" src="./quiz-tab.js?v=8"></script>
+  <script type="module" src="./negotiation-tabs.js?v=8"></script>
+  <script type="module" src="./fusion-db.js?v=8"></script>
+  <script type="module" src="./navigation-state.js?v=8"></script>
+</body>
+</html>
