@@ -1,0 +1,79 @@
+name: Validate Fusion DB
+
+on:
+  push:
+    paths:
+      - '.github/workflows/validate-fusion-db.yml'
+      - 'fusion-db.js'
+      - 'navigation-state.js'
+      - 'fusion.css'
+      - 'index.html'
+      - 'data/aqiu-p5r-personas.js'
+      - 'data/aqiu-p5r-skills.js'
+      - 'data/aqiu-p5r-enemies.js'
+      - 'data/aqiu-p5r-fusion.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JavaScript and dataset coverage
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-default-type=module --check fusion-db.js
+          node --experimental-default-type=module --check navigation-state.js
+          grep -q 'SPECIAL_PAIR_KEYS' fusion-db.js
+          grep -q 'selectableOptions' fusion-db.js
+          grep -q 'fusion-db.js?v=8' index.html
+          node --experimental-default-type=module <<'NODE'
+          import { aqiuP5rPersonas } from './data/aqiu-p5r-personas.js';
+          import { aqiuP5rSkills } from './data/aqiu-p5r-skills.js';
+          import { aqiuP5rEnemies } from './data/aqiu-p5r-enemies.js';
+          import { aqiuP5rFusion } from './data/aqiu-p5r-fusion.js';
+          if (aqiuP5rPersonas.length < 220) throw new Error('Persona coverage failed');
+          if (aqiuP5rSkills.length < 500) throw new Error('Merged skill coverage failed');
+          if (aqiuP5rEnemies.length < 120) throw new Error('Enemy coverage failed');
+          if (aqiuP5rFusion.arcana.length !== 24) throw new Error('Fusion chart coverage failed');
+          if (Object.keys(aqiuP5rFusion.specialRecipes).length < 30) throw new Error('Special recipe coverage failed');
+          console.log({ personas: aqiuP5rPersonas.length, skills: aqiuP5rSkills.length, enemies: aqiuP5rEnemies.length });
+          NODE
+
+      - name: Record successful Fusion DB build
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-default-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { aqiuP5rPersonas } from './data/aqiu-p5r-personas.js';
+          import { aqiuP5rSkills } from './data/aqiu-p5r-skills.js';
+          import { aqiuP5rEnemies } from './data/aqiu-p5r-enemies.js';
+          import { aqiuP5rFusion } from './data/aqiu-p5r-fusion.js';
+          const status = {
+            status: 'pass',
+            validatedCommit: process.env.GITHUB_SHA,
+            personas: aqiuP5rPersonas.length,
+            skills: aqiuP5rSkills.length,
+            enemies: aqiuP5rEnemies.length,
+            arcana: aqiuP5rFusion.arcana.length,
+            specialRecipes: Object.keys(aqiuP5rFusion.specialRecipes).length,
+            runtimeSourceFetches: 0,
+            assetVersion: 8
+          };
+          fs.writeFileSync('data/fusion-build-status.json', JSON.stringify(status, null, 2) + '\n');
+          NODE
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/fusion-build-status.json
+          if git diff --cached --quiet; then
+            echo 'Fusion DB status is already current.'
+          else
+            git commit -m 'Record successful Fusion DB validation'
+            git push
+          fi
