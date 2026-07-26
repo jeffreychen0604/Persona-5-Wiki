@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T12:51:53.896Z",
+  "generatedAt": "2026-07-26T12:56:25.158Z",
   "totals": {
     "answerGroups": 806,
     "directMatches": 794,
@@ -127,73 +127,281 @@
     {
       "character": "Futaba Sakura",
       "rank": "Rank 9",
+      "canonicalRank": "9",
       "group": 5,
+      "answers": [
+        "I would like that / If that’s OK with you. +0",
+        "Um, Hello? / Is something wrong? +0",
+        "Earth to Futaba? / Are you still alive? +0"
+      ],
+      "bestScore": 20,
+      "bestCandidate": {
+        "prompt": "* \"And... I'm your girlfriend?\"",
+        "answers": [
+          "I would like that.",
+          "If that's okay with you."
+        ],
+        "sourceLabel": "9",
+        "sourceGroup": 5
+      },
+      "positionalCandidate": {
+        "prompt": "* \"And... I'm your girlfriend?\"",
+        "answers": [
+          "I would like that.",
+          "If that's okay with you."
+        ],
+        "sourceLabel": "9",
+        "sourceGroup": 5
+      },
       "mode": "positional"
     },
     {
       "character": "Sojiro Sakura",
       "rank": "Rank MAX",
+      "canonicalRank": "MAX",
       "group": 1,
+      "answers": [
+        "For what? +0",
+        "You guys are religious? +0",
+        "I’m not interested. +0"
+      ],
+      "bestScore": 0,
+      "bestCandidate": {
+        "prompt": "\"Oh... I told her about you too.\"",
+        "answers": [
+          "Good for you.",
+          "Thank you."
+        ],
+        "sourceLabel": "10",
+        "sourceGroup": 1
+      },
+      "positionalCandidate": {
+        "prompt": "\"Oh... I told her about you too.\"",
+        "answers": [
+          "Good for you.",
+          "Thank you."
+        ],
+        "sourceLabel": "10",
+        "sourceGroup": 1
+      },
       "mode": "positional"
     },
     {
       "character": "Sojiro Sakura",
       "rank": "Rank MAX",
+      "canonicalRank": "MAX",
       "group": 2,
+      "answers": [
+        "Good for you. +3",
+        "Thank you. +3"
+      ],
+      "bestScore": null,
+      "bestCandidate": null,
+      "positionalCandidate": null,
       "mode": "missing"
     },
     {
       "character": "Makoto Niijima",
       "rank": "Rank 9",
+      "canonicalRank": "9",
       "group": 7,
+      "answers": [
+        "I’d do anything for you. +2",
+        "Were you scared? +0",
+        "No big deal. +2"
+      ],
+      "bestScore": 0,
+      "bestCandidate": {
+        "prompt": "\"I'd probably never have pulled this off alone. Thank you so much.\"",
+        "answers": [
+          "Platonic / Lovers",
+          "Platonic / Lovers",
+          "Platonic / Lovers"
+        ],
+        "sourceLabel": "9",
+        "sourceGroup": 7
+      },
+      "positionalCandidate": {
+        "prompt": "\"I'd probably never have pulled this off alone. Thank you so much.\"",
+        "answers": [
+          "Platonic / Lovers",
+          "Platonic / Lovers",
+          "Platonic / Lovers"
+        ],
+        "sourceLabel": "9",
+        "sourceGroup": 7
+      },
       "mode": "positional"
     },
     {
       "character": "Sadayo Kawakami",
       "rank": "Rank 8.5",
+      "canonicalRank": "8.5",
       "group": 1,
+      "answers": [
+        "We’re talking here. +0",
+        "You know it, lady. +0"
+      ],
+      "bestScore": null,
+      "bestCandidate": null,
+      "positionalCandidate": null,
       "mode": "missing"
     },
     {
       "character": "Sadayo Kawakami",
       "rank": "Rank 8.5",
+      "canonicalRank": "8.5",
       "group": 2,
+      "answers": [
+        "You can’t give up. +0",
+        "But you were so determined. +0"
+      ],
+      "bestScore": null,
+      "bestCandidate": null,
+      "positionalCandidate": null,
       "mode": "missing"
     },
     {
       "character": "Sadayo Kawakami",
       "rank": "Rank 8.5",
+      "canonicalRank": "8.5",
       "group": 3,
+      "answers": [
+        "What are their names again? +0",
+        "I need their names. +0"
+      ],
+      "bestScore": null,
+      "bestCandidate": null,
+      "positionalCandidate": null,
       "mode": "missing"
     },
     {
       "character": "Shinya Oda",
       "rank": "Rank 3",
+      "canonicalRank": "3",
       "group": 1,
+      "answers": [
+        "Did something happen? +0",
+        "Let’s go eat. +0",
+        "Are you fasting? +0"
+      ],
+      "bestScore": 0,
+      "bestCandidate": {
+        "prompt": "\"All they did today was throw eraser crumbs into my lunch, though, so I won that round.\"",
+        "answers": [
+          "Are they bullying you?",
+          "Sounds like fun.",
+          "You shouldn't waste food."
+        ],
+        "sourceLabel": "3",
+        "sourceGroup": 1
+      },
+      "positionalCandidate": {
+        "prompt": "\"All they did today was throw eraser crumbs into my lunch, though, so I won that round.\"",
+        "answers": [
+          "Are they bullying you?",
+          "Sounds like fun.",
+          "You shouldn't waste food."
+        ],
+        "sourceLabel": "3",
+        "sourceGroup": 1
+      },
       "mode": "positional"
     },
     {
       "character": "Shinya Oda",
       "rank": "Rank 3",
+      "canonicalRank": "3",
       "group": 2,
+      "answers": [
+        "OK. +0",
+        "I’m not down with that. +0",
+        "Let me think about it. +0"
+      ],
+      "bestScore": 0,
+      "bestCandidate": {
+        "prompt": "\"That's why I gotta get stronger!\"",
+        "answers": [
+          "That's the spirit.",
+          "Want to learn martial arts?",
+          "You really love your mom."
+        ],
+        "sourceLabel": "3",
+        "sourceGroup": 2
+      },
+      "positionalCandidate": {
+        "prompt": "\"That's why I gotta get stronger!\"",
+        "answers": [
+          "That's the spirit.",
+          "Want to learn martial arts?",
+          "You really love your mom."
+        ],
+        "sourceLabel": "3",
+        "sourceGroup": 2
+      },
       "mode": "positional"
     },
     {
       "character": "Shinya Oda",
       "rank": "Rank 3",
+      "canonicalRank": "3",
       "group": 3,
+      "answers": [
+        "Are they bullying you? +0",
+        "Sounds like fun? +0",
+        "You shouldn’t waste food. +0"
+      ],
+      "bestScore": 0,
+      "bestCandidate": {
+        "prompt": "\"Maybe we can go eat something again while we're at it?\"",
+        "answers": [
+          "Sure.",
+          "If our schedules line up.",
+          "Any food requests?"
+        ],
+        "sourceLabel": "3",
+        "sourceGroup": 3
+      },
+      "positionalCandidate": {
+        "prompt": "\"Maybe we can go eat something again while we're at it?\"",
+        "answers": [
+          "Sure.",
+          "If our schedules line up.",
+          "Any food requests?"
+        ],
+        "sourceLabel": "3",
+        "sourceGroup": 3
+      },
       "mode": "positional"
     },
     {
       "character": "Shinya Oda",
       "rank": "Rank 3",
+      "canonicalRank": "3",
       "group": 4,
+      "answers": [
+        "That’s the spirit. +2",
+        "Want to learn martial arts? +0",
+        "You really love your mom. +0"
+      ],
+      "bestScore": null,
+      "bestCandidate": null,
+      "positionalCandidate": null,
       "mode": "missing"
     },
     {
       "character": "Shinya Oda",
       "rank": "Rank 3",
+      "canonicalRank": "3",
       "group": 5,
+      "answers": [
+        "Sure. +2",
+        "If our schedules line up. +0",
+        "Any food requests? +0"
+      ],
+      "bestScore": null,
+      "bestCandidate": null,
+      "positionalCandidate": null,
       "mode": "missing"
     }
   ]
