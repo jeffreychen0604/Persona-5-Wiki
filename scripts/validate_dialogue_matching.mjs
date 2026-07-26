@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import { confidants } from '../data/confidants.js';
 import { dialoguePrompts } from '../data/dialogue-prompts.js';
+import { dialogueOverrides } from '../data/dialogue-overrides.js';
 
 function canonicalRank(label = '') {
   const value = String(label).toUpperCase().replace(/[–—]/g, '-');
@@ -38,7 +39,7 @@ function promptScore(group, candidate, groupIndex) {
 
 const report = {
   generatedAt: new Date().toISOString(),
-  totals: { answerGroups: 0, directMatches: 0, positionalFallbacks: 0, missing: 0 },
+  totals: { answerGroups: 0, directMatches: 0, manualOverrides: 0, positionalFallbacks: 0, missing: 0 },
   characters: {},
   unresolved: [],
 };
@@ -46,11 +47,12 @@ const report = {
 for (const confidant of confidants) {
   const sourceRecords = dialoguePrompts[confidant.name];
   if (!sourceRecords) continue;
-  const stats = { answerGroups: 0, directMatches: 0, positionalFallbacks: 0, missing: 0 };
+  const stats = { answerGroups: 0, directMatches: 0, manualOverrides: 0, positionalFallbacks: 0, missing: 0 };
 
   for (const rank of confidant.conversations || []) {
     const responseGroups = rank.responses || [];
     const key = canonicalRank(rank.label);
+    const overrides = dialogueOverrides[confidant.name]?.[key] || [];
     const candidates = sourceRecords
       .filter(record => record.rank === key)
       .flatMap((record, recordIndex) => (record.groups || []).map((group, groupIndex) => ({ ...group, recordIndex, groupIndex, sourceLabel: record.sourceLabel })));
@@ -59,6 +61,13 @@ for (const confidant of confidants) {
     responseGroups.forEach((group, groupIndex) => {
       stats.answerGroups += 1;
       report.totals.answerGroups += 1;
+
+      if (overrides[groupIndex]) {
+        stats.manualOverrides += 1;
+        report.totals.manualOverrides += 1;
+        return;
+      }
+
       let bestIndex = -1;
       let best = { score: -Infinity, exact: 0, partial: 0 };
       candidates.forEach((candidate, index) => {
@@ -114,11 +123,10 @@ for (const confidant of confidants) {
   report.characters[confidant.name] = stats;
 }
 
-const directCoverage = report.totals.answerGroups
-  ? report.totals.directMatches / report.totals.answerGroups
-  : 0;
-report.totals.directCoverage = Number((directCoverage * 100).toFixed(2));
+const covered = report.totals.directMatches + report.totals.manualOverrides;
+report.totals.directCoverage = Number((report.totals.directMatches / report.totals.answerGroups * 100).toFixed(2));
+report.totals.effectiveCoverage = Number((covered / report.totals.answerGroups * 100).toFixed(2));
 fs.writeFileSync('data/dialogue-match-report.json', JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(report.totals, null, 2));
 
-if (report.totals.missing > 0) process.exitCode = 2;
+if (report.totals.missing > 0 || report.totals.positionalFallbacks > 0) process.exitCode = 2;
