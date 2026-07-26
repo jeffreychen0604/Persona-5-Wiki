@@ -51,8 +51,8 @@ function quizCard(entry) {
   const { month, day } = splitDate(entry.date);
   if (entry.event) {
     return `<article class="quizCard quizEvent searchable" data-month="${escapeHtml(month)}">
-      <span class="quizDate"><small>${escapeHtml(month.slice(0, 3))}</small><strong>${escapeHtml(day)}</strong></span>
-      <span class="quizEventBody"><strong>Event Day</strong><small>The TV Quiz is unavailable on this Thursday.</small></span>
+      <div class="quizDate"><small>${escapeHtml(month.slice(0, 3))}</small><strong>${escapeHtml(day)}</strong></div>
+      <div class="quizEventBody"><strong>Event Day</strong><small>The TV Quiz is unavailable on this Thursday.</small></div>
     </article>`;
   }
 
@@ -67,11 +67,11 @@ function quizCard(entry) {
   }).join('');
 
   return `<article class="quizCard searchable" data-month="${escapeHtml(month)}">
-    <span class="quizDate"><small>${escapeHtml(month.slice(0, 3))}</small><strong>${escapeHtml(day)}</strong></span>
-    <span class="quizBody">
+    <div class="quizDate"><small>${escapeHtml(month.slice(0, 3))}</small><strong>${escapeHtml(day)}</strong></div>
+    <div class="quizBody">
       <strong class="quizQuestion">${escapeHtml(entry.question)}</strong>
-      <span class="quizOptions">${options}</span>
-    </span>
+      <div class="quizOptions">${options}</div>
+    </div>
   </article>`;
 }
 
