@@ -6,16 +6,19 @@ on:
       - '.github/workflows/seed-local-data.yml'
       - 'scripts/sync_dialogue_prompts.py'
       - 'scripts/sync_negotiation_data.py'
+      - 'scripts/sync_aqiu_p5r_data.py'
       - 'scripts/validate_dialogue_matching.mjs'
       - 'data/dialogue-overrides.js'
       - 'data/quiz.js'
       - 'app.js'
       - 'quiz-tab.js'
       - 'negotiation-tabs.js'
+      - 'fusion-db.js'
       - 'styles.css'
       - 'dialogue.css'
       - 'quiz.css'
       - 'negotiation.css'
+      - 'fusion.css'
       - 'index.html'
   workflow_dispatch:
 
@@ -62,6 +65,17 @@ jobs:
           grep -q 'export const royalNegotiations' data/negotiation-royal.js
           test -s data/negotiation-report.json
 
+      - name: Build repository-local AqiU Persona 5 Royal data
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/sync_aqiu_p5r_data.py
+          grep -q 'export const aqiuP5rPersonas' data/aqiu-p5r-personas.js
+          grep -q 'export const aqiuP5rSkills' data/aqiu-p5r-skills.js
+          grep -q 'export const aqiuP5rEnemies' data/aqiu-p5r-enemies.js
+          grep -q 'export const aqiuP5rFusion' data/aqiu-p5r-fusion.js
+          test -s data/aqiu-p5r-report.json
+
       - name: Validate application and local datasets
         shell: bash
         run: |
@@ -69,12 +83,18 @@ jobs:
           node --experimental-default-type=module --check app.js
           node --experimental-default-type=module --check quiz-tab.js
           test ! -f negotiation-tabs.js || node --experimental-default-type=module --check negotiation-tabs.js
+          test ! -f fusion-db.js || node --experimental-default-type=module --check fusion-db.js
           node --experimental-default-type=module --check data/dialogue-overrides.js
           node --experimental-default-type=module --check data/quiz.js
           node --experimental-default-type=module --check data/shadows-royal.js
           node --experimental-default-type=module --check data/negotiation-royal.js
+          node --experimental-default-type=module --check data/aqiu-p5r-personas.js
+          node --experimental-default-type=module --check data/aqiu-p5r-skills.js
+          node --experimental-default-type=module --check data/aqiu-p5r-enemies.js
+          node --experimental-default-type=module --check data/aqiu-p5r-fusion.js
           node --experimental-default-type=module -e "import('./data/quiz.js').then(({tvQuiz})=>{const questions=tvQuiz.filter(x=>!x.event);if(questions.length!==11)throw new Error('Expected 11 TV Quiz questions');if(questions.some(x=>!['A','B'].includes(x.correct)||x.options.length!==2))throw new Error('Invalid TV Quiz choice data');console.log('TV Quiz questions:',questions.length);})"
           node --experimental-default-type=module -e "Promise.all([import('./data/shadows-royal.js'),import('./data/negotiation-royal.js')]).then(([s,n])=>{if(s.royalShadows.length<180)throw new Error('Shadow dataset too small');if(n.royalNegotiations.length<250)throw new Error('Negotiation dataset too small');console.log('Royal Shadows:',s.royalShadows.length,'Negotiation questions:',n.royalNegotiations.length);})"
+          node --experimental-default-type=module -e "Promise.all([import('./data/aqiu-p5r-personas.js'),import('./data/aqiu-p5r-skills.js'),import('./data/aqiu-p5r-enemies.js'),import('./data/aqiu-p5r-fusion.js')]).then(([p,s,e,f])=>{if(p.aqiuP5rPersonas.length<180)throw new Error('AqiU Persona dataset too small');if(s.aqiuP5rSkills.length<300)throw new Error('AqiU skill dataset too small');if(e.aqiuP5rEnemies.length<150)throw new Error('AqiU enemy dataset too small');if(f.aqiuP5rFusion.arcana.length!==24)throw new Error('Unexpected P5R fusion chart');console.log('AqiU P5R:',p.aqiuP5rPersonas.length,'personas,',s.aqiuP5rSkills.length,'skills,',e.aqiuP5rEnemies.length,'enemies');})"
 
       - name: Require complete prompt matching coverage
         shell: bash
