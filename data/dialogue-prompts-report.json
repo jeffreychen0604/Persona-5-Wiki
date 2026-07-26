@@ -1,0 +1,109 @@
+{
+  "source": "Megami Tensei Wiki / Fandom MediaWiki API",
+  "characters": {
+    "Ann Takamaki": {
+      "page": "Confidant/Ann Takamaki",
+      "rankRecords": 11,
+      "dialogueGroups": 62,
+      "status": "ok"
+    },
+    "Ryuji Sakamoto": {
+      "page": "Confidant/Ryuji Sakamoto",
+      "rankRecords": 10,
+      "dialogueGroups": 50,
+      "status": "ok"
+    },
+    "Makoto Niijima": {
+      "page": "Confidant/Makoto Niijima",
+      "rankRecords": 11,
+      "dialogueGroups": 72,
+      "status": "ok"
+    },
+    "Yusuke Kitagawa": {
+      "page": "Confidant/Yusuke Kitagawa",
+      "rankRecords": 10,
+      "dialogueGroups": 46,
+      "status": "ok"
+    },
+    "Futaba Sakura": {
+      "page": "Confidant/Futaba Sakura",
+      "rankRecords": 11,
+      "dialogueGroups": 51,
+      "status": "ok"
+    },
+    "Haru Okumura": {
+      "page": "Confidant/Haru Okumura",
+      "rankRecords": 11,
+      "dialogueGroups": 54,
+      "status": "ok"
+    },
+    "Goro Akechi": {
+      "page": "Confidant/Goro Akechi",
+      "rankRecords": 9,
+      "dialogueGroups": 59,
+      "status": "ok"
+    },
+    "Tae Takemi": {
+      "page": "Confidant/Tae Takemi",
+      "rankRecords": 12,
+      "dialogueGroups": 52,
+      "status": "ok"
+    },
+    "Ichiko Ohya": {
+      "page": "Confidant/Ichiko Ohya",
+      "rankRecords": 12,
+      "dialogueGroups": 60,
+      "status": "ok"
+    },
+    "Shinya Oda": {
+      "page": "Confidant/Shinya Oda",
+      "rankRecords": 10,
+      "dialogueGroups": 43,
+      "status": "ok"
+    },
+    "Sojiro Sakura": {
+      "page": "Confidant/Sojiro Sakura",
+      "rankRecords": 10,
+      "dialogueGroups": 32,
+      "status": "ok"
+    },
+    "Hifumi Togo": {
+      "page": "Confidant/Hifumi Togo",
+      "rankRecords": 12,
+      "dialogueGroups": 54,
+      "status": "ok"
+    },
+    "Toranosuke Yoshida": {
+      "page": "Confidant/Toranosuke Yoshida",
+      "rankRecords": 10,
+      "dialogueGroups": 31,
+      "status": "ok"
+    },
+    "Chihaya Mifune": {
+      "page": "Confidant/Chihaya Mifune",
+      "rankRecords": 12,
+      "dialogueGroups": 58,
+      "status": "ok"
+    },
+    "Munehisa Iwai": {
+      "page": "Confidant/Munehisa Iwai",
+      "rankRecords": 11,
+      "dialogueGroups": 50,
+      "status": "ok"
+    },
+    "Yuuki Mishima": {
+      "page": "Confidant/Yuuki Mishima",
+      "rankRecords": 11,
+      "dialogueGroups": 57,
+      "status": "ok"
+    }
+  },
+  "errors": {
+    "Kasumi Yoshizawa": "Persona 5 Royal dialogue subsection not found",
+    "Sadayo Kawakami": "Persona 5 Royal dialogue subsection not found",
+    "Takuto Maruki": "Persona 5 Royal dialogue subsection not found"
+  },
+  "totalDialogueGroups": 831,
+  "successfulCharacters": 16,
+  "failedCharacters": 3
+}
