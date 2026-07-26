@@ -1,0 +1,25 @@
+body.desktopMode{max-width:none;margin:0;border:0;padding:0;min-width:980px;background:linear-gradient(135deg,#210006 0 11%,transparent 11%),repeating-linear-gradient(-12deg,transparent 0 46px,#ffffff05 46px 48px),var(--bg)}
+.desktopTopbar{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;min-height:76px;padding:14px 28px;background:#090909f4}
+.desktopTopbar .brand strong{font-size:17px}.desktopTopbar .brand small{font-size:12px}.viewSwitch{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#171717;text-decoration:none;font-size:13px;font-weight:850}.viewSwitch:hover{border-color:var(--red);background:#221114}
+.desktopShell{display:grid;grid-template-columns:330px minmax(0,1fr);gap:20px;max-width:1680px;margin:0 auto;padding:22px 28px 40px}
+.desktopSidebar{position:sticky;top:98px;align-self:start;max-height:calc(100vh - 118px);overflow:auto;border:1px solid var(--line);border-radius:17px;background:#111111f2;box-shadow:0 18px 55px #0008;scrollbar-width:thin}
+.desktopSidebar .hero{padding:22px 22px 16px}.desktopSidebar .hero h1{font-size:38px}.desktopSidebar .hero p{font-size:14px}
+.desktopSidebar .searchbar{position:static;padding:12px 18px;border-block:1px solid #ffffff12;background:#0d0d0d}.desktopSidebar .searchbar input{height:48px}
+.desktopNav.bottomNav{position:static;left:auto;right:auto;bottom:auto;z-index:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:auto;transform:none;gap:8px;padding:16px 18px;background:transparent;border:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+.desktopNav .navButton,.desktopNav .quizNavButton,.desktopNav .guideNavButton,.desktopNav .fusionNavButton{height:58px;padding:7px 5px;border-radius:11px;font-size:11px}.desktopNav button span{font-size:18px}.desktopNav button small{font-size:10px}
+.filterLabel{padding:2px 20px 0;color:var(--muted);font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.desktopSidebar .chips{display:flex;flex-wrap:wrap;gap:7px;overflow:visible;padding:11px 18px 20px}.desktopSidebar .chip{min-height:38px;padding:7px 11px;font-size:11px}
+.desktopPanel.panel{min-width:0;margin:0;border-radius:17px;overflow:visible;box-shadow:0 22px 70px #000a}.desktopPanel .panelHead{position:sticky;top:98px;z-index:24;min-height:68px;padding:15px 18px;border-radius:16px 16px 0 0;background:#181818f5;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.desktopPanel .panelHead strong{font-size:19px}.desktopPanel .panelHead small{font-size:12px}.desktopPanel .sourceLink{padding:9px 12px}
+.desktopPanel .rankJumps{position:sticky;top:166px;z-index:23;padding:10px 16px;background:#121212f3;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.desktopPanel .content{padding:26px 28px 54px}.desktopPanel .content>h1{font-size:36px}.desktopPanel .content h2{font-size:21px}
+.desktopPanel .availability{grid-template-columns:repeat(7,minmax(0,1fr))}.desktopPanel .abilities{grid-template-columns:repeat(2,minmax(0,1fr))}
+.desktopPanel .classAnswer{grid-template-columns:70px minmax(0,1fr);padding:13px}.desktopPanel .date{min-height:58px}
+.desktopPanel .shadowList,.desktopPanel .negotiationList,.desktopPanel .personaDbList,.desktopPanel .skillDbList,.desktopPanel .enemyDbList{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.desktopPanel details[open].personaDbCard,.desktopPanel details[open].skillDbCard,.desktopPanel details[open].enemyDbCard,.desktopPanel details[open].negotiationCard{grid-column:1/-1}
+.desktopPanel .statGrid{grid-template-columns:repeat(5,minmax(72px,1fr))}.desktopPanel .resistGrid{grid-template-columns:repeat(10,minmax(58px,1fr))}.desktopPanel .dbItems{grid-template-columns:repeat(2,minmax(0,1fr))}
+.desktopPanel .chartScroll{max-width:100%}.desktopPanel .fusionChart{min-width:1120px}.desktopPanel .treasureChart{min-width:1260px}
+.desktopPanel .recipePairList{grid-template-columns:repeat(2,minmax(0,1fr))}.desktopPanel .unlockGroups{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.desktopPanel .unlockGroup[open]{grid-column:span 1}
+.desktopPanel .fusionSettings{grid-template-columns:repeat(3,minmax(0,1fr))}.desktopPanel .resetSettings{max-width:320px}
+.backTop{right:30px;bottom:28px;width:48px;height:48px}
+@media(max-width:1180px){body.desktopMode{min-width:900px}.desktopShell{grid-template-columns:290px minmax(0,1fr);padding-inline:18px}.desktopPanel .shadowList,.desktopPanel .negotiationList,.desktopPanel .personaDbList,.desktopPanel .skillDbList,.desktopPanel .enemyDbList{grid-template-columns:1fr}.desktopPanel .fusionSettings{grid-template-columns:1fr}.desktopPanel .availability{grid-template-columns:repeat(4,minmax(0,1fr))}}
