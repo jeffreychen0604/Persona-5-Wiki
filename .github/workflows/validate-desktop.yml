@@ -1,0 +1,48 @@
+name: Validate desktop guide
+
+on:
+  push:
+    paths:
+      - 'desktop.html'
+      - 'desktop.css'
+      - 'app.js'
+      - 'quiz-tab.js'
+      - 'negotiation-tabs.js'
+      - 'fusion-db.js'
+      - 'navigation-state.js'
+      - 'data/**'
+      - '.github/workflows/validate-desktop.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-desktop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate shared modules
+        run: |
+          set -euo pipefail
+          node --experimental-default-type=module --check app.js
+          node --experimental-default-type=module --check quiz-tab.js
+          node --experimental-default-type=module --check negotiation-tabs.js
+          node --experimental-default-type=module --check fusion-db.js
+          node --experimental-default-type=module --check navigation-state.js
+      - name: Validate desktop shell contract
+        run: |
+          set -euo pipefail
+          test -s desktop.html
+          test -s desktop.css
+          grep -q 'id="searchInput"' desktop.html
+          grep -q 'id="filterChips"' desktop.html
+          grep -q 'id="rankJumps"' desktop.html
+          grep -q 'id="content"' desktop.html
+          grep -q 'id="quizNav"' desktop.html
+          grep -q 'id="shadowsNav"' desktop.html
+          grep -q 'id="negotiationNav"' desktop.html
+          grep -q 'id="fusionNav"' desktop.html
+          grep -q './fusion-db.js?v=8' desktop.html
+          grep -q 'grid-template-columns:330px' desktop.css
+      - name: Validate shared datasets
+        run: |
+          set -euo pipefail
+          node --experimental-default-type=module -e "Promise.all([import('./data/quiz.js'),import('./data/shadows-royal.js'),import('./data/negotiation-royal.js'),import('./data/aqiu-p5r-personas.js'),import('./data/aqiu-p5r-skills.js'),import('./data/aqiu-p5r-enemies.js'),import('./data/aqiu-p5r-fusion.js')]).then(([q,sh,n,p,s,e,f])=>{if(q.tvQuiz.filter(x=>!x.event).length!==11)throw new Error('TV Quiz mismatch');if(sh.royalShadows.length<180)throw new Error('Shadow data missing');if(n.royalNegotiations.length<250)throw new Error('Negotiation data missing');if(p.aqiuP5rPersonas.length<220)throw new Error('Persona data missing');if(s.aqiuP5rSkills.length<500)throw new Error('Skill data missing');if(e.aqiuP5rEnemies.length<120)throw new Error('Enemy data missing');if(f.aqiuP5rFusion.arcana.length!==24)throw new Error('Fusion chart mismatch');console.log('Desktop shared data contract: pass');})"
