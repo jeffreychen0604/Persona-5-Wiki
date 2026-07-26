@@ -10,9 +10,10 @@
   <meta name="apple-mobile-web-app-title" content="P5R Guide">
   <meta name="format-detection" content="telephone=no">
   <title>P5R Pocket Guide</title>
-  <link rel="stylesheet" href="./styles.css?v=6">
-  <link rel="stylesheet" href="./dialogue.css?v=6">
-  <link rel="stylesheet" href="./quiz.css?v=6">
+  <link rel="stylesheet" href="./styles.css?v=7">
+  <link rel="stylesheet" href="./dialogue.css?v=7">
+  <link rel="stylesheet" href="./quiz.css?v=7">
+  <link rel="stylesheet" href="./negotiation.css?v=7">
 </head>
 <body>
   <header class="topbar">
@@ -49,13 +50,16 @@
   <button id="backTop" class="backTop" aria-label="Back to top">↑</button>
 
   <nav class="bottomNav" aria-label="Main sections">
-    <button class="navButton active" data-view="confidants">♟ Confidants</button>
-    <button class="navButton" data-view="class">✎ Class Answers</button>
-    <button class="quizNavButton" id="quizNav" type="button">▣ TV Quiz</button>
+    <button class="navButton active" data-view="confidants"><span>♟</span><small>Confidants</small></button>
+    <button class="navButton" data-view="class"><span>✎</span><small>Class</small></button>
+    <button class="quizNavButton" id="quizNav" type="button"><span>▣</span><small>TV Quiz</small></button>
+    <button class="guideNavButton" id="shadowsNav" type="button"><span>◈</span><small>Shadows</small></button>
+    <button class="guideNavButton" id="negotiationNav" type="button"><span>◆</span><small>Negotiate</small></button>
   </nav>
 
   <noscript>This guide requires JavaScript, but all guide data is stored locally in the repository.</noscript>
-  <script type="module" src="./app.js?v=6"></script>
-  <script type="module" src="./quiz-tab.js?v=6"></script>
+  <script type="module" src="./app.js?v=7"></script>
+  <script type="module" src="./quiz-tab.js?v=7"></script>
+  <script type="module" src="./negotiation-tabs.js?v=7"></script>
 </body>
 </html>
