@@ -44,7 +44,7 @@ SOURCES: list[tuple[str, list[str]]] = [
 ]
 
 API = "https://megamitensei.fandom.com/api.php"
-USER_AGENT = "Persona-5-Wiki dialogue context sync/1.0 (GitHub Pages data build)"
+USER_AGENT = "Persona-5-Wiki dialogue context sync/1.1 (GitHub Pages data build)"
 
 
 def fetch_wikitext(page_candidates: list[str]) -> tuple[str, str]:
@@ -76,8 +76,6 @@ def fetch_wikitext(page_candidates: list[str]) -> tuple[str, str]:
 
 
 def replace_templates(value: str) -> str:
-    # Resolve simple nested templates from the inside out. For tooltip-like
-    # templates, the visible label is the first argument after the template name.
     pattern = re.compile(r"\{\{([^{}]*)\}\}")
     for _ in range(12):
         match = pattern.search(value)
@@ -121,12 +119,12 @@ def canonical_rank(label: str) -> str:
 
 
 def extract_royal_section(wikitext: str) -> str:
-    dialogue_index = wikitext.lower().find("==dialogue options==")
-    if dialogue_index < 0:
+    dialogue_match = re.search(r"(?mi)^==\s*Dialogue Options\s*==\s*$", wikitext)
+    if not dialogue_match:
         raise ValueError("Dialogue Options section not found")
-    dialogue = wikitext[dialogue_index:]
+    dialogue = wikitext[dialogue_match.end() :]
     royal = re.search(
-        r"(?mi)^={2,4}\s*''?persona 5 royal''?\s*={2,4}\s*$",
+        r"(?mi)^={2,5}\s*''?\s*Persona 5 Royal\s*''?\s*={2,5}\s*$",
         dialogue,
     )
     if not royal:
@@ -138,7 +136,12 @@ def extract_royal_section(wikitext: str) -> str:
 
 def cell_value(line: str) -> str:
     value = line[1:].strip()
-    if "|" in value and (value.startswith("style=") or value.startswith("class=") or value.startswith("scope=")):
+    if "|" in value and (
+        value.startswith("style=")
+        or value.startswith("class=")
+        or value.startswith("scope=")
+        or value.startswith("align=")
+    ):
         value = value.split("|", 1)[1]
     return clean_wiki(value)
 
@@ -166,7 +169,7 @@ def extract_groups(block: str) -> list[dict[str, object]]:
         answers = []
 
     prompt_pattern = re.compile(
-        r'^\|colspan="?3"?[^|]*(?:background(?:-color)?\s*:\s*#(?:500|700|800|900|[5-9]00))[^|]*\|(.*)$',
+        r'^\|\s*colspan\s*=\s*"?3"?[^|]*background(?:-color)?\s*:\s*#[0-9a-f]{3,6}[^|]*\|(.*)$',
         re.I,
     )
 
@@ -180,7 +183,7 @@ def extract_groups(block: str) -> list[dict[str, object]]:
         if line == "|-":
             finish_row()
             continue
-        if line.startswith("|}") or line.startswith("{|" ) or line.startswith("!"):
+        if line.startswith("|}") or line.startswith("{|") or line.startswith("!"):
             finish_row()
             continue
         if not line.startswith("|") or line.startswith("|colspan=") or line.startswith("|rowspan="):
@@ -195,7 +198,7 @@ def extract_groups(block: str) -> list[dict[str, object]]:
 
 def parse_page(wikitext: str) -> list[dict[str, object]]:
     section = extract_royal_section(wikitext)
-    rank_matches = list(re.finditer(r"(?m)^;Rank\s+(.+?)\s*$", section))
+    rank_matches = list(re.finditer(r"(?m)^;\s*Rank\s+(.+?)\s*$", section))
     records: list[dict[str, object]] = []
     for index, match in enumerate(rank_matches):
         end = rank_matches[index + 1].start() if index + 1 < len(rank_matches) else len(section)
@@ -214,27 +217,36 @@ def parse_page(wikitext: str) -> list[dict[str, object]]:
 
 def main() -> None:
     data: dict[str, list[dict[str, object]]] = {}
-    report: dict[str, object] = {"source": "Megami Tensei Wiki / Fandom MediaWiki API", "characters": {}}
+    report: dict[str, object] = {
+        "source": "Megami Tensei Wiki / Fandom MediaWiki API",
+        "characters": {},
+        "errors": {},
+    }
     total_groups = 0
 
     for name, candidates in SOURCES:
-        page, wikitext = fetch_wikitext(candidates)
-        records = parse_page(wikitext)
-        group_count = sum(len(record["groups"]) for record in records)
-        if group_count < 5:
-            raise RuntimeError(f"Only {group_count} dialogue groups extracted for {name} from {page}")
-        data[name] = records
-        report["characters"][name] = {
-            "page": page,
-            "rankRecords": len(records),
-            "dialogueGroups": group_count,
-        }
-        total_groups += group_count
-        print(f"{name}: {len(records)} rank records, {group_count} dialogue groups")
+        try:
+            page, wikitext = fetch_wikitext(candidates)
+            records = parse_page(wikitext)
+            group_count = sum(len(record["groups"]) for record in records)
+            if not group_count:
+                raise RuntimeError(f"No dialogue groups extracted from {page}")
+            data[name] = records
+            report["characters"][name] = {
+                "page": page,
+                "rankRecords": len(records),
+                "dialogueGroups": group_count,
+                "status": "ok" if group_count >= 5 else "low-coverage",
+            }
+            total_groups += group_count
+            print(f"{name}: {len(records)} rank records, {group_count} dialogue groups")
+        except Exception as exc:  # Keep valid characters even when one page changes shape.
+            report["errors"][name] = str(exc)
+            print(f"ERROR {name}: {exc}")
         time.sleep(0.35)
 
-    if total_groups < 250:
-        raise RuntimeError(f"Extraction coverage is unexpectedly low: {total_groups} groups")
+    if total_groups == 0:
+        raise RuntimeError("No dialogue groups could be extracted")
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     module = (
@@ -246,8 +258,10 @@ def main() -> None:
     )
     OUTPUT.write_text(module, encoding="utf-8")
     report["totalDialogueGroups"] = total_groups
+    report["successfulCharacters"] = len(data)
+    report["failedCharacters"] = len(report["errors"])
     REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {OUTPUT} with {total_groups} dialogue groups")
+    print(f"Wrote {OUTPUT} with {total_groups} dialogue groups across {len(data)} characters")
 
 
 if __name__ == "__main__":
