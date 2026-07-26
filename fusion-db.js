@@ -21,6 +21,15 @@ const RESIST_NAMES = { phy: 'Phys', gun: 'Gun', fir: 'Fire', ice: 'Ice', ele: 'E
 const RESIST_LABELS = { wk: 'Weak', no: 'Normal', rs: 'Resist', nu: 'Null', rp: 'Repel', dr: 'Drain' };
 const ELEMENT_NAMES = { phy:'Phys', gun:'Gun', fir:'Fire', ice:'Ice', ele:'Elec', win:'Wind', psy:'Psy', nuk:'Nuke', ble:'Bless', cur:'Curse', alm:'Almighty', ail:'Ailment', rec:'Recovery', sup:'Support', pas:'Passive', tra:'Trait' };
 const yen = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 });
+const SPECIAL_PAIR_KEYS = new Set(
+  Object.values(aqiuP5rFusion.specialRecipes)
+    .filter(recipe => recipe.length === 2)
+    .map(recipe => recipe.slice().sort((a, b) => a.localeCompare(b)).join('\u0000'))
+);
+
+function recipePairKey(nameA, nameB) {
+  return [nameA, nameB].sort((a, b) => a.localeCompare(b)).join('\u0000');
+}
 
 const state = {
   active: false,
@@ -336,7 +345,7 @@ function normalRecipes(target) {
     const bRows = byArcana.get(arcanaB) || [];
     aRows.forEach(a => bRows.forEach(b => {
       const sum = a.level + b.level;
-      if (minSum < sum && sum <= maxSum) recipes.push([a.name, b.name, 'Normal']);
+      if (minSum < sum && sum <= maxSum && !SPECIAL_PAIR_KEYS.has(recipePairKey(a.name, b.name))) recipes.push([a.name, b.name, 'Normal']);
     }));
   });
   return recipes;
@@ -367,7 +376,8 @@ function renderRecipes() {
   const targetOptions = aqiuP5rPersonas.filter(persona => !persona.party && personaAllowed(persona)).sort((a,b) => a.level - b.level || a.name.localeCompare(b.name));
   const query = activeQuery();
   const filteredOptions = query ? targetOptions.filter(persona => [persona.name, persona.arcana].join(' ').toLowerCase().includes(query)) : targetOptions;
-  if (!state.recipeTarget || !targetOptions.some(persona => persona.name === state.recipeTarget)) state.recipeTarget = targetOptions[0]?.name || '';
+  const selectableOptions = query ? filteredOptions : targetOptions;
+  if (!state.recipeTarget || !selectableOptions.some(persona => persona.name === state.recipeTarget)) state.recipeTarget = selectableOptions[0]?.name || '';
   const target = targetOptions.find(persona => persona.name === state.recipeTarget);
   const special = target?.recipe?.length ? [[...target.recipe, target.name]] : [];
   const pairs = [...normalRecipes(target), ...treasureRecipes(target)];
