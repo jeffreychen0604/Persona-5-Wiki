@@ -11,7 +11,6 @@ performs no runtime requests to aqiu384.github.io or the source repository.
 from __future__ import annotations
 
 import json
-import math
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -27,13 +26,14 @@ SKILL_EFFECTS_URL = (
     "https://raw.githubusercontent.com/aqiu384/megaten-fusion-tool/"
     f"{SOURCE_COMMIT}/src/app/compendium/data/skill-effects.json"
 )
-USER_AGENT = "Persona-5-Wiki repository Fusion DB sync/1.0"
+USER_AGENT = "Persona-5-Wiki repository Fusion DB sync/1.1"
 
 FILES = {
     "config": "comp-config.json",
     "personas": "roy-demon-data.json",
     "party": "roy-party-data.json",
-    "skills": "roy-skill-data.json",
+    "skills_base": "skill-data.json",
+    "skills_royal": "roy-skill-data.json",
     "enemies": "roy-enemy-data.json",
     "unlocks": "roy-demon-unlocks.json",
     "special": "roy-special-recipes.json",
@@ -176,7 +176,7 @@ def build_personas(
 
 
 def build_skills(
-    raw_skills: dict[str, Any],
+    raw_skill_sets: list[dict[str, Any]],
     personas: list[dict[str, Any]],
     effects: dict[str, str],
 ) -> list[dict[str, Any]]:
@@ -184,9 +184,19 @@ def build_skills(
     for persona in personas:
         for skill in persona["skills"]:
             learners.setdefault(skill["name"], []).append({"name": persona["name"], "level": skill["level"]})
+        if persona.get("trait"):
+            learners.setdefault(persona["trait"], []).append({"name": persona["name"], "level": 0})
+
+    # Persona 5 Royal loads the base skill table first and then the Royal table.
+    # A Royal row with the same skill name therefore replaces the base definition.
+    merged: dict[str, tuple[str, dict[str, Any]]] = {}
+    for raw_skills in raw_skill_sets:
+        for code, row in raw_skills.items():
+            merged[row["a"][0]] = (code, row)
+
     rows: list[dict[str, Any]] = []
-    for code, row in raw_skills.items():
-        name, element, target = row["a"]
+    for name, (code, row) in merged.items():
+        _name, element, target = row["a"]
         numbers = row["b"]
         descriptions = row["c"]
         rows.append({
@@ -202,7 +212,13 @@ def build_skills(
             "effect": skill_effect(numbers, descriptions, effects),
             "card": "" if descriptions[2] == "-" else descriptions[2],
             "unique": numbers[0] >= 90,
-            "learnedBy": sorted(learners.get(name, []), key=lambda entry: (entry["level"] if isinstance(entry["level"], int) else 0, entry["name"])),
+            "learnedBy": sorted(
+                learners.get(name, []),
+                key=lambda entry: (
+                    entry["level"] if isinstance(entry["level"], int) else 0,
+                    entry["name"],
+                ),
+            ),
         })
     rows.sort(key=lambda row: (row["element"], row["rank"], row["name"]))
     return rows
@@ -268,7 +284,7 @@ def main() -> None:
     effects = download_json(SKILL_EFFECTS_URL)
     unlock_lookup = build_unlock_lookup(raw["unlocks"], raw["prereqs"])
     personas = build_personas(raw["personas"], raw["party"], raw["config"], raw["special"], unlock_lookup)
-    skills = build_skills(raw["skills"], personas, effects)
+    skills = build_skills([raw["skills_base"], raw["skills_royal"]], personas, effects)
     enemies = build_enemies(raw["enemies"], raw["config"])
     fusion = build_fusion_data(raw["config"], raw["chart"], raw["elements"], raw["special"], raw["unlocks"], SOURCE_COMMIT)
 
@@ -282,6 +298,8 @@ def main() -> None:
         "personas": len(personas),
         "fusionPersonas": sum(not row["party"] for row in personas),
         "partyPersonas": sum(row["party"] for row in personas),
+        "baseSkillRows": len(raw["skills_base"]),
+        "royalSkillRows": len(raw["skills_royal"]),
         "skills": len(skills),
         "enemies": len(enemies),
         "arcana": len(fusion["arcana"]),
