@@ -14,11 +14,16 @@ on:
       - '.github/workflows/validate-desktop.yml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   validate-desktop:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Validate shared modules
         run: |
           set -euo pipefail
@@ -46,3 +51,42 @@ jobs:
         run: |
           set -euo pipefail
           node --experimental-default-type=module -e "Promise.all([import('./data/quiz.js'),import('./data/shadows-royal.js'),import('./data/negotiation-royal.js'),import('./data/aqiu-p5r-personas.js'),import('./data/aqiu-p5r-skills.js'),import('./data/aqiu-p5r-enemies.js'),import('./data/aqiu-p5r-fusion.js')]).then(([q,sh,n,p,s,e,f])=>{if(q.tvQuiz.filter(x=>!x.event).length!==11)throw new Error('TV Quiz mismatch');if(sh.royalShadows.length<180)throw new Error('Shadow data missing');if(n.royalNegotiations.length<250)throw new Error('Negotiation data missing');if(p.aqiuP5rPersonas.length<220)throw new Error('Persona data missing');if(s.aqiuP5rSkills.length<500)throw new Error('Skill data missing');if(e.aqiuP5rEnemies.length<120)throw new Error('Enemy data missing');if(f.aqiuP5rFusion.arcana.length!==24)throw new Error('Fusion chart mismatch');console.log('Desktop shared data contract: pass');})"
+      - name: Record successful validation
+        run: |
+          set -euo pipefail
+          node --experimental-default-type=module <<'NODE'
+          import { tvQuiz } from './data/quiz.js';
+          import { royalShadows } from './data/shadows-royal.js';
+          import { royalNegotiations } from './data/negotiation-royal.js';
+          import { aqiuP5rPersonas } from './data/aqiu-p5r-personas.js';
+          import { aqiuP5rSkills } from './data/aqiu-p5r-skills.js';
+          import { aqiuP5rEnemies } from './data/aqiu-p5r-enemies.js';
+          import { aqiuP5rFusion } from './data/aqiu-p5r-fusion.js';
+          import fs from 'node:fs';
+          fs.writeFileSync('desktop-validation.json', JSON.stringify({
+            status: 'pass',
+            validatedCommit: process.env.GITHUB_SHA,
+            tabs: 6,
+            confidants: 21,
+            classAnswers: 'repository-local',
+            tvQuiz: tvQuiz.filter(row => !row.event).length,
+            shadows: royalShadows.length,
+            negotiationQuestions: royalNegotiations.length,
+            personas: aqiuP5rPersonas.length,
+            skills: aqiuP5rSkills.length,
+            enemies: aqiuP5rEnemies.length,
+            arcana: aqiuP5rFusion.arcana.length,
+            runtimeSourceFetches: 0,
+            sharedDataWithMobile: true
+          }, null, 2) + '\n');
+          NODE
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add desktop-validation.json
+          if git diff --cached --quiet; then
+            echo 'Desktop validation status is already current.'
+          else
+            git commit -m 'Record successful desktop shared-data validation'
+            git pull --rebase
+            git push
+          fi
